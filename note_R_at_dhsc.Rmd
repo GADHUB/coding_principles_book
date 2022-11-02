@@ -1,6 +1,6 @@
-# R at DHSC {#r_at_dhsc}
+# R at GAD {#r_at_GAD}
 
-The following are the DHSC [sensible defaults](#sensible_defaults) for R:
+The following are the GAD [sensible defaults](#sensible_defaults) for R:
 
 ## R Version & IDE
 The dominant IDE for R is Rstudio, which comes packaged with R. 
@@ -51,7 +51,7 @@ Recommended Packages:
 ## Project Workflow {#r_projects}
 Always work in a project. See the guide to [Using Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
-Projects functionality is broken in DHSC's packaged version of Rstudio - see the fix [here](R/fix_projects.R)
+Projects functionality is broken in GAD's packaged version of Rstudio - see the fix [here](R/fix_projects.R)
 
 ## Packaging Your Code {#r_package}
 Packages are the fundamental unit of reproducible R code. 

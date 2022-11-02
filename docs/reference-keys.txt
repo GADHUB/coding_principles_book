@@ -6,7 +6,7 @@ effective_vc
 workflow_vc
 code-in-the-open
 manual-version-control
-git-github-at-dhsc
+git-github-at-gad
 easy_to_read
 style_guides
 linters
@@ -68,7 +68,7 @@ communities-1
 websites-and-blogs-1
 guides-and-tutorials
 git-1
-py_at_dhsc
+py_at_GAD
 version-ide
 default-packages-and-add-ins
 general-1
@@ -78,7 +78,7 @@ py_packages
 py_dependencies
 py_errorhandling
 py_tests
-r_at_dhsc
+r_at_GAD
 r-version-ide
 general-2
 r_default_packages

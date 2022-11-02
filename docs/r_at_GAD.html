@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>D Reproducible Analytical Pipelines | GAD Coding Principles</title>
-  <meta name="description" content="D Reproducible Analytical Pipelines | GAD Coding Principles" />
+  <title>C R at GAD | GAD Coding Principles</title>
+  <meta name="description" content="C R at GAD | GAD Coding Principles" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="D Reproducible Analytical Pipelines | GAD Coding Principles" />
+  <meta property="og:title" content="C R at GAD | GAD Coding Principles" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="D Reproducible Analytical Pipelines | GAD Coding Principles" />
+  <meta name="twitter:title" content="C R at GAD | GAD Coding Principles" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="r_at_GAD.html"/>
-
+<link rel="prev" href="py_at_GAD.html"/>
+<link rel="next" href="rap.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -291,50 +291,130 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rap" class="section level1 hasAnchor" number="14">
-<h1><span class="header-section-number">D</span> Reproducible Analytical Pipelines<a href="rap.html#rap" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Automating the steps used to create a your report or output is a good way to avoid the human errors that manual intervention will introduce.</p>
-<p>This is the focus of the Reproducible Analytical Pipelines community. The RAP community has curated the following resources:</p>
+<div id="r_at_GAD" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">C</span> R at GAD<a href="r_at_GAD.html#r_at_GAD" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The following are the GAD <a href="sensible_defaults.html#sensible_defaults">sensible defaults</a> for R:</p>
+<div id="r-version-ide" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">C.1</span> R Version &amp; IDE<a href="r_at_GAD.html#r-version-ide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The dominant IDE for R is Rstudio, which comes packaged with R.
+For a new project you should use the latest version of Rstudio available from the software portal.</p>
+</div>
+<div id="general-2" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">C.2</span> General<a href="r_at_GAD.html#general-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Default to packages from the <a href="http://tidyverse.org/">Tidyverse</a>.These have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: <a href="http://r4ds.had.co.nz">R for Data Science by Hadley Wickham</a>.</p>
+<p>For example:</p>
 <ul>
-<li><a href="https://ukgovdatascience.github.io/rap-website/">RAP Website</a></li>
-<li><a href="https://www.udemy.com/reproducible-analytical-pipelines/">Udemy Course</a></li>
-<li><a href="https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf">National Services Scotland RAP paper</a></li>
-<li><a href="https://www.isdscotland.org/About-ISD/Methodologies/_docs/Checklist-for-TPP-and-RAP-processes_v0-3.pdf">National Services Scotland RAP checklist</a></li>
+<li>Prefer tibbles to data.frames</li>
+<li>Use ggplot2 rather than base graphics</li>
+<li>Use the pipe <code>%&gt;%</code> rather than nesting function calls. (…but not always e.g. see <a href="https://twitter.com/hadleywickham/status/603883121197514752">here</a>).</li>
+<li>Prefer <code>purrr</code> to the <code>apply</code> family of functions. See <a href="http://r4ds.had.co.nz/iteration.html#the-map-functions">here</a></li>
 </ul>
-<div id="automating-pipelines" class="section level2 hasAnchor" number="14.1">
-<h2><span class="header-section-number">D.1</span> Automating Pipelines<a href="rap.html#automating-pipelines" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can do this by:</p>
+</div>
+<div id="r_default_packages" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">C.3</span> Packages<a href="r_at_GAD.html#r_default_packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recommended Packages:</p>
 <ul>
-<li><p>Designing a final output which can be created without manual intervention.</p></li>
-<li><p>Making sure your code is broken down into chunks which do discrete tasks in your pipeline, for example:</p>
+<li>Data Manupulation and Tidying
 <ul>
-<li>gathering</li>
-<li>cleaning</li>
-<li>processing and modelling</li>
-<li>reporting and visualisation</li>
+<li><a href="https://dplyr.tidyverse.org/">dplyr</a></li>
+<li><a href="https://tidyr.tidyverse.org/">tidyr</a></li>
 </ul></li>
-<li><p>Taking advantage of tools which keep track of the interactions between your data and code. These tools can then re-run the required bits of your pipeline automatically as you update, correct and improve it.</p>
+<li>Working with messy spreadsheets
 <ul>
-<li><p><a href="https://www.gnu.org/software/make/">GNU Make</a> is the classic tool and is language agnostic, but perhaps not user friendly.</p></li>
-<li><p>The <a href="https://ropenscilabs.github.io/drake-manual/"><code>drake</code></a> package is designed for analysis pipelines in R.</p></li>
-<li><p>The <a href="https://pydoit.org/"><code>doit</code></a> package can do the same and more for python. The <a href="https://wiki.python.org/moin/ConfigurationAndBuildTools">python wiki</a> also has a list of build tools for python.</p></li>
+<li><a href="https://nacnudus.github.io/tidyxl/">tidyxl</a></li>
+<li><a href="https://github.com/nacnudus/unpivotr">unpivotr</a></li>
+</ul></li>
+<li>Working with large datasets:
+<ul>
+<li><a href="https://rdatatable.gitlab.io/data.table/">data.table</a></li>
+<li><a href="https://dtplyr.tidyverse.org/">dtplyr</a></li>
+</ul></li>
+<li>Database Interface
+<ul>
+<li><a href="https://dbplyr.tidyverse.org/">dbplyr</a></li>
+</ul></li>
+<li>Plotting
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/">ggplot2</a></li>
+<li><a href="https://plot.ly/r/">plotly</a></li>
+</ul></li>
+<li>Mapping
+<ul>
+<li><a href="https://github.com/r-spatial/sf/">sf</a></li>
+<li><a href="http://rstudio.github.io/leaflet/">leaflet</a></li>
+</ul></li>
+<li>Reproducibility
+<ul>
+<li><a href="https://rstudio.github.io/renv/">renv</a></li>
+</ul></li>
+<li>Producing gov.uk style output
+<ul>
+<li><a href="http://ukgovdatascience.github.io/govstyle/index.html">govstyle</a> (Government Theme for ggplot2)</li>
+<li><a href="https://ukgovdatascience.github.io/govdown/">govdown</a></li>
+</ul></li>
+<li>Machine Learning
+<ul>
+<li><a href="https://tensorflow.rstudio.com/">tensorflow</a></li>
+<li><a href="https://github.com/h2oai/h2o-3">h2o</a></li>
 </ul></li>
 </ul>
 </div>
-<div id="code-version-linked-to-outputs" class="section level2 hasAnchor" number="14.2">
-<h2><span class="header-section-number">D.2</span> Code Version Linked to Outputs<a href="rap.html#code-version-linked-to-outputs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You might successfully implement an automated pipeline and a reproducible environment. However unless you know which version of these was used to produce an output you might well come unstuck!</p>
-<p>Make sure that you can track backwards and determine which version of your code produced a particular output.</p>
-<p>You can do this by:</p>
+<div id="r_projects" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">C.4</span> Project Workflow<a href="r_at_GAD.html#r_projects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Always work in a project. See the guide to <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">Using Projects</a>.</p>
+<p>Projects functionality is broken in GAD’s packaged version of Rstudio - see the fix <a href="R/fix_projects.R">here</a></p>
+</div>
+<div id="r_package" class="section level2 hasAnchor" number="13.5">
+<h2><span class="header-section-number">C.5</span> Packaging Your Code<a href="r_at_GAD.html#r_package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Packages are the fundamental unit of reproducible R code.
+Therefore, if possible, build an R Package to share and document your code.</p>
+<p>Hadley’s book on <a href="http://r-pkgs.had.co.nz/">R Packages</a> is an effective guide on how to produce a package.</p>
+<p>The <a href="https://usethis.r-lib.org/">usethis</a> package has lots of useful shortcuts for package builders.</p>
+</div>
+<div id="r_dependencies" class="section level2 hasAnchor" number="13.6">
+<h2><span class="header-section-number">C.6</span> Managing Dependencies<a href="r_at_GAD.html#r_dependencies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are two key competing ways of managing dependencies for an R Project:</p>
 <ul>
-<li>Use git to version control your code</li>
-<li>Make ‘atomic’ commits which relate to individual Changes</li>
-<li>include the git hash (identifies the code) in the output
+<li><a href="https://rstudio.github.io/packrat/"><code>packrat</code></a> - current established way to manage R dependencies</li>
+<li><a href="https://rstudio.github.io/renv/"><code>renv</code></a> - rapidly maturing, successor to packrat.</li>
+</ul>
+<p>See also:</p>
 <ul>
-<li>R: <a href="https://docs.ropensci.org/git2r/">git2r</a></li>
-<li>Python: <a href="https://gitpython.readthedocs.io/en/stable/">gitpython</a></li>
+<li>Rstudio page on <a href="https://environments.rstudio.com/">managing environments in R</a></li>
+<li>Rbloggers <a href="https://www.r-bloggers.com/reproducible-environments/">post on renv</a></li>
+<li>Rstudio page on combining <a href="https://rstudio.github.io/renv/articles/docker.html">renv and docker</a></li>
+</ul>
+<div id="r_checkpoint" class="section level3 hasAnchor" number="13.6.1">
+<h3><span class="header-section-number">C.6.1</span> Using old versions of packages<a href="r_at_GAD.html#r_checkpoint" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You may come across code which doesn’t work because it depends on a different version of a package to the one you have.</p>
+<p>Fortunately, Microsoft keep daily snapshots of CRAN and store them on the <a href="https://mran.microsoft.com/timemachine">Microsoft R Application Network</a>.</p>
+<p>The <code>checkpoint</code> package from Microsoft lets you use these snapshots to install packages as if it were any day since 2017-07-01.</p>
+<p>Simply start your script with:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r_at_GAD.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(checkpoint)</span>
+<span id="cb7-2"><a href="r_at_GAD.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="r_at_GAD.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">checkpoint</span>(<span class="at">snapshotDate =</span> <span class="st">&quot;2015-01-15&quot;</span>,</span>
+<span id="cb7-4"><a href="r_at_GAD.html#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">checkpointLocation =</span> <span class="fu">getwd</span>()) </span></code></pre></div>
+<p>This will download and fetch all the packages as they existed on the given date and install them to a library on your home drive.</p>
+<p>Notes:</p>
+<ul>
+<li>If the code depends on <code>BH</code> (a lot of tidyverse code will) then this will take some time!</li>
+<li>By default checkpoint puts packages on your P drive - this will be slow.
+<ul>
+<li>You can use the <code>checkpointLocation</code> argument to tell checkpoint to use the C drive.</li>
 </ul></li>
 </ul>
+</div>
+</div>
+<div id="r_errorhandling" class="section level2 hasAnchor" number="13.7">
+<h2><span class="header-section-number">C.7</span> Error Handling<a href="r_at_GAD.html#r_errorhandling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Base R includes the <code>try()</code> and <code>tryCatch()</code> functions for handling errors. You can find an example of basic use of these on <a href="https://www.r-bloggers.com/error-handling-in-r/">r-bloggers</a>.</p>
+<p>Effective error handling in R requires understanding the <em>conditions</em> system. There is a good chapter on this in Hadley’s <a href="https://adv-r.hadley.nz/conditions.html">Advanced R book</a></p>
+<p>If you are iterating over many inputs, it is recommended that you use the <code>safely()</code> family of functions from <code>purrr</code> to create versions which return errors within a list for handling at a later stage.</p>
+</div>
+<div id="r_tests" class="section level2 hasAnchor" number="13.8">
+<h2><span class="header-section-number">C.8</span> Unit Testing<a href="r_at_GAD.html#r_tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use the <code>testthat</code> package for performing unit tests.
+For details see the <a href="https://r-pkgs.org/tests.html">‘tests’ chapter of R Packages</a>.</p>
 
 </div>
 </div>
@@ -343,8 +423,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="r_at_GAD.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="py_at_GAD.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

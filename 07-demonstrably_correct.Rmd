@@ -27,7 +27,7 @@ Your code and analysis will grow and evolve. You wont have time to QA every vers
 
 There are frameworks which help you construct and run tests on units of your code. These can be a good way to demonstrate that code is working correctly as you update it.
 
-See [R at DHSC](#r_tests) and [Python at DHSC](#py_tests) for more details.
+See [R at GAD](#r_tests) and [Python at GAD](#py_tests) for more details.
 
 ## Version Control Integration
 Having unit tests, and QA is good. Ideally however you can tie a particular result to a particular version of the QA'd and tested code. You _could_ do this manually, by keeping the code for each set of outputs.

@@ -19,10 +19,10 @@ Most languages have several available style guides, which define a set of conven
 * Naming conventions & formats
 * Comment & documentation use
 
-DHSC has adopted a single style guide for each language.
+GAD has adopted a single style guide for each language.
 Please use this style; consistency will make it easier for colleagues to understand, QA and improve your code!
 
-| Language | DHSC Adopted Style Guide                              |
+| Language | GAD Adopted Style Guide                              |
 |----------|-------------------------------------------------------|
 | R        | [tidyverse style guide](https://style.tidyverse.org/) |
 | Python   |    [PEP-8](https://www.python.org/dev/peps/pep-0008/) |
@@ -30,7 +30,7 @@ Please use this style; consistency will make it easier for colleagues to underst
 ## Linters & Code Formatters {#linters}
 [Linters](https://en.wikipedia.org/wiki/Lint_%28software%29) are tools that you can use to ensure that you are following a given style guide. Code Formatters will take your code, and format it so that it conforms to a stanard.
 
-| Language | DHSC Recommended Linter / Formatter                   |
+| Language | GAD Recommended Linter / Formatter                   |
 |----------|-------------------------------------------------------|
 | R        |  [lintr](https://github.com/jimhester/lintr) / [Styler](http://styler.r-lib.org/) |
 | Python   |  [pylint](https://www.pylint.org/) / [Black](https://pypi.org/project/black/) |

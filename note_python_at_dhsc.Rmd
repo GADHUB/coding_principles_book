@@ -1,5 +1,5 @@
-# Python at DHSC {#py_at_dhsc}
-The following are the DHSC [sensible defaults](#sensible_defaults) for Python:
+# Python at GAD {#py_at_GAD}
+The following are the GAD [sensible defaults](#sensible_defaults) for Python:
 
 ## Version & IDE
 Use Python 3 via [Jupyter Notebooks](https://jupyter.org/) or [VSCode](https://code.visualstudio.com/)

@@ -1,6 +1,6 @@
 # Coding Resources {}
 
-The intent of this section is to act as an index of resources which may be of use to DHSC analysts writing code.
+The intent of this section is to act as an index of resources which may be of use to GAD analysts writing code.
 
 ## General
 

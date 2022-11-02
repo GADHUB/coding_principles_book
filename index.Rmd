@@ -1,6 +1,6 @@
 ---
-title: "DHSC Coding Principles"
-author: "DHSC Office of the Chief Analyst"
+title: "GAD Coding Principles"
+author: "GAD Office of the Chief Analyst"
 site: bookdown::bookdown_site
 documentclass: book
 output:
@@ -12,25 +12,25 @@ output:
         collapse: section
         scroll_highlight: yes
         after: |
-          <li><a href="https://github.com/DataS-DHSC/coding_principles_book" target="blank">Coding Principles Book on GitHub</a></li>
+          <li><a href="https://github.com/GADHUB/coding_principles_book" target="blank">Coding Principles Book on GitHub</a></li>
       mathjax: default
     
 ---
 
 # Disclaimer {-}
 
-This is an unapproved draft and does not represent the views of the DHSC.
+This is an unapproved draft and does not represent the views of the GAD.
 
 ## Aknowledgements {-}
 
-These principles were inspired by the MOJ [Coding Principles and Standards](https://moj-analytical-services.github.io/our-coding-standards/web/) and developed further by a group at DHSC to produce a version targeted at DHSC Analysts.
+These principles were inspired by the MOJ [Coding Principles and Standards](https://moj-analytical-services.github.io/our-coding-standards/web/) and developed further by a group at GAD to produce a version targeted at GAD Analysts.
 
 # Introduction {-}
 These principles are designed with the aim of improving coding standards and consistency within the department.
 
 Adoption of these principles should improve quality, facilitate collaboration and enable effective QA of code. The principles are not language specific. This is to maximise uptake and provide a uniform set of values across languages.
 
-The principles are designed to be achievable by all DHSC analysts producing code. Each Principle is flexible and has multiple levels:
+The principles are designed to be achievable by all GAD analysts producing code. Each Principle is flexible and has multiple levels:
 
 * **Must** - You aren't finished until your code has met this standard.
 
@@ -63,7 +63,7 @@ The principles are designed to be achievable by all DHSC analysts producing code
 
 (ref:easytoread-intro) Keep your code easy to read. Using a consistent style and sensible names will make it easier to collaborate and quality assure work. It will also help you spot errors.
 
-(ref:easytoread-must) Follow the [DHSC adopted style](#style_guides) for your language, use [meaningful names](#meaningful_names) and avoid [overlaps](#dont_overlap).
+(ref:easytoread-must) Follow the [GAD adopted style](#style_guides) for your language, use [meaningful names](#meaningful_names) and avoid [overlaps](#dont_overlap).
 
 (ref:easytoread-should) Use a [linter](https://en.wikipedia.org/wiki/Lint_%28software%29) or code formatter to ensure that your code conforms to the style guide. 
 

@@ -20,5 +20,5 @@
 ## Language Specific Defaults:
 In addition to the general principles, please see the language specifc pages:
 
-* [Python at DHSC](#py_at_dhsc)
-* [R at DHSC](#r_at_dhsc)
+* [Python at GAD](#py_at_GAD)
+* [R at GAD](#r_at_GAD)
