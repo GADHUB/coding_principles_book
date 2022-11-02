@@ -1,3 +1,8 @@
+<style>
+div.purple pre { background-color:purple;}
+div.purple pre.r { background-color:purple;}
+</style>
+
 # R at GAD {#r_at_GAD}
 
 The following are the GAD [sensible defaults](#sensible_defaults) for R:
@@ -107,3 +112,348 @@ If you are iterating over many inputs, it is recommended that you use the `safel
 ## Unit Testing {#r_tests}
 Use the `testthat` package for performing unit tests. 
 For details see the ['tests' chapter of R Packages](https://r-pkgs.org/tests.html).
+
+
+## Assignment {#r_assignment}
+
+### The `<-` and `->` operators
+
+Assignment should always involve assigning a value on the right-hand-side of the `<-` operator to the object on its left hand side. The `->` operator should *never* be used, and the `=` operator should not be used for assignment.
+
+
+
+
+
+```{r  eval = FALSE, class.source="Rchunksk", class.output="Routsk"}
+
+#good
+a <- 1
+
+#bad
+1 -> a
+
+#also bad
+a = 1
+```
+
+
+An exception is where the `assign()` function or `<<-` are used, in which case 
+assignment can be done without `<-` or `->`. 
+This should only be done when `<-` cannot be used.
+And as with the above, never use `->>` instead of `<<-`  .
+
+Note - if the code below is confusing, section 10.2.4
+here may be of use:
+https://adv-r.hadley.nz/function-factories.html#stateful-funs
+
+
+```{r  eval = FALSE, class.source="Rchunksk", class.output="Routsk"}
+
+#only do this when `<-` will not work, e.g. when
+#the name of the object being assigned to is stored 
+#as a string:
+assign('a', 1, envir = globalenv())
+
+#if assigning to the scope of the enclosing environment, 
+#use `<<-` 
+create_counter <- function() {
+  i <- 0
+  
+  function() {
+    i <<- i + 1
+    return(i)
+  }
+}
+
+#but don't use `<<-` when `<-` would work just as well!
+
+#good:
+a <- 1
+
+#bad:
+a <<- 1
+
+#even worse:
+1 ->> a
+
+
+```
+
+
+## Commenting {#r_commenting}
+
+Code should always be well commented; the sections below provide
+guidance on good commenting practice.
+
+### Position of comments
+
+Comments should appear above related sections of code.
+
+```{r  eval = FALSE, class.source="Rchunksk", class.output="Routsk"}
+
+#Good:
+
+  #assigning value of 1 to object a:
+  a <- 1
+
+#Bad:
+
+  a <- 1 #assigning value of 1 to object a
+
+
+```
+
+
+### Detail of comments
+
+It is generally preferable to err on the side of including more comments rather than not commenting enough.
+Nevertheless, you should be judicious in your use of comments - adding a comment to explain something 
+obvious will unnecessarily clutter your code. The most important places to include comments are where
+the code is doing something complicated and non-obvious, particularly if it is using functions or syntax that
+others may not be familiar with. This being the case, comment usage should sometimes be adjusted based on
+the technical proficiency of others working on the project: if you know that the code will be checked by 
+someone who has a lot of experience in R, you will rarely need comments that help the reader to understand the 
+syntax being employed. Conversely, if it will be checked by a relative novice, it may be helpful to provide 
+more details comments about the operations being performed by the code:
+
+
+
+```{r eval = FALSE, class.source="Rchunksk", class.output="Routsk"}
+
+#The code chunk below changes the format of a dataframe 
+#from a 'wide' format to a 'long' format. The extent 
+#of commenting required may depend on the technical
+#proficiency of other people who will work with the 
+#code. If this is subject to uncertainty, err on the
+#side of more thorough explanations
+
+data.frame(
+  animal_id = 1:10, 
+  weight = rnorm(n = 10, mean = 5, sd = 3), 
+  height = rnorm(n = 10, mean = 7, sd = 3) 
+  ) %>%
+  pivot_longer(
+    c(weight, height)
+  )
+
+```
+
+
+### Outdated comments
+
+When making changes to code, it is important to correspondingly update comments.
+Otherwise, comments may become misleading:
+
+```{r  eval = FALSE, class.source="Rchunksk", class.output="Routsk"}
+
+#Uh-oh! Somebody has updated the 'convert_units()' 
+#function so that it converts from grams to 
+#kilograms instead of  grams to tonnes. But they
+#didn't update the comment!
+
+  #The function below converts from grams to tonnes:
+  convert_units <- function(value) {
+    value <- value / 1000
+    return(value)
+  }
+
+
+```
+
+### Different commenting contexts
+
+In some cases, such as when commenting non-code sections of Rmarkdown documents
+or pre-pending comments to functions within your own packages using roxygen 
+or similar, the above conventions will not suffice because different commenting
+syntax will be involved. These situations are likely to be rare in GAD's work 
+and are thus beyond the scope of this guidance.
+
+## Indentation and spacing {#r_indentation_and_spacing}
+
+When coding in R, indentation and spacing generally has 
+absolutely no impact on the way in which code is evaluated.
+We should use the freedom that this allows us to space 
+and indent code in a manner that maximises readability.
+A few good practices to follow are:
+
+1. Opening brackets should be followed by a new line
+plus tab indendtation
+2. Closing brackets should be preceded by a new line
+plus removal of tab indentation
+3. We can make exceptions to the above when brackets 
+only enclose a small expression
+4. The `<-`,  `=` and `<<-` operators should be followed 
+and preceded by a space, as should commas
+5. Within tidyverse and magrittr, pipe operators 
+like `%>%`, `%$%` and `%T>%` should come at the
+end of a line
+
+```{r eval = FALSE, class.source="Rchunksk", class.output="Routsk"}
+
+#good:
+data <- data.frame(
+  animal_id = 1:10, 
+  #it's OK to have rnorm() on a single line because the
+  #brackets don't enclose much code.
+  weight = rnorm(n = 10, mean = 5, sd = 3), 
+  height = rnorm(n = 10, mean = 7, sd = 3) 
+  ) %>%
+  pivot_longer(
+    c(weight, height)
+  )
+
+#bad:
+data<-data.frame(animal_id=1:10,weight = rnorm(n = 10, 
+mean = 5, sd = 3),height=rnorm(
+  n = 10, mean = 7,sd=3
+)) %>% pivot_longer(c(weight, height)
+)
+
+```
+
+## Data management {#r_data_management}
+
+If possible, it is better to store data in tidy dataframes rather than, 
+for example, in nested lists:
+
+
+```{r eval = FALSE, class.source="Rchunksk", class.output="Routsk"}
+
+#good:
+data <- data.frame(
+  gender = c('male', 'male','female','female'), 
+  scheme = c('legacy', 'care', 'legacy','care'),
+  value = c(1000, 2000, 3000, 4000)
+)
+
+#bad:
+data <- list(
+  male = list(legacy = 1000, care = 2000),
+  female = list(legacy = 3000, care = 4000)
+)
+
+#It often makes more sense to create a tibble
+#rather than a standard dataframe, but this
+#can depend on context:
+
+#also good:
+data <- dplyr::tibble(
+  gender = c('male', 'male','female','female'), 
+  scheme = c('legacy', 'care', 'legacy','care'),
+  value = c(1000, 2000, 3000, 4000)
+)
+
+
+
+```
+
+## Naming conventions {#r_naming_conventions}
+
+Within a given piece of code, all objects and names within vectors, lists or 
+dataframes should follow camel case or snake case convention, but not both.
+Camel case involves writing names with the first chunk of the name uncapitalised
+and all subseqeunt chunks capitalised; a 'chunk' in this context means a part
+of the name that would be surrounded by spaces in normal writing. Snake case
+involves replacing spaces with underscores and removing all capitalisation:
+
+thisObjectNameIsWrittenInCamelCase
+
+this_object_name_is_written_in_snake_case
+
+In addition, we should try to avoid making names too long (unlike the above), 
+but this should be balanced against the need to avoid shortening long strings
+into incomprehensible abbreviations
+
+```{r eval = FALSE, class.source="Rchunksk", class.output="Routsk"}
+
+
+#bad - not camel case or snake case:
+my_Object_Nm <- 1
+AnotherOBJECT <- 2
+
+#bad - mixing camel case and snake case in same code:
+my_object_name <- 1
+anotherObject <- 2
+
+#bad - confusing abbreviations or arbitrary names make it
+#difficult to easily discern what the objects are supposed
+#to represent:
+m_o_n <- 1
+x <- 2
+
+#good - exclusively camel case, 
+#abbreviations comprehensible:
+myObjName <- 1
+anotherObj <- 2
+
+#good - exclusively snake case, 
+#abbreviations comprehensible:
+my_obj_name <- 1
+another_obj <- 2
+
+
+```
+
+## Folder structure and path specification {#r_folder_structure_and_path_specification}
+
+In general, R code should be contained within folders that have 
+a pre-arranged structure from the outset, allowing for the use of
+relative file paths. The advantage of this is that the relevant
+folder can contain all code, data and other necessary files and 
+can be moved around to different parent folders and locations, without
+paths needing to be re-written when, for example, code is sent to a client:
+
+```{r,  eval = FALSE, class.source="Rchunksk", class.output="Routsk"}
+
+###Assume we have a folder structure as follows and that
+###the code below is found in 'our_code.R'
+
+#project_folder
+#   - data_folder
+#     - dataset_1.csv
+#     - dataset_2.csv
+#   - code_folder
+#     - our_code.R
+#     - more_code.R
+
+#good:
+  
+  #load packages
+  library(readr)
+
+  #read in data using relative paths
+  dataset_1 <- read_csv('
+      ../data_folder/dataset_1.csv'
+      )
+  dataset_2 <- read_csv('
+      ../data_folder/dataset_2.csv'
+      )
+  #create user-defined functions
+  source('./more_code.R')
+  
+#bad:
+  
+  #load packages
+  library(readr)
+
+  #read in data using absolute paths
+  dataset_1 <- read_csv(
+    '<long_and_convoluted_path>/dataset_1.csv'
+    )
+  dataset_2 <- read_csv(
+    '<long_and_convoluted_path>/dataset_2.csv'
+    )
+  
+  #create user-defined functions
+  source('<long_and_convoluted_path>/more_code.R') 
+
+
+```
+
+## Reading in data from csv files {#r_reading_in_data_from_csv_files}
+
+When reading in data from a csv file, it is preferable to use the `read_csv()`
+function from the `readr` package, rather than the base function `read.csv()`
+This is because the latter is liable to behave differently for different users, 
+see: 
+https://r4ds.had.co.nz/data-import.html

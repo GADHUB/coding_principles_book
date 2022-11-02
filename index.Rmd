@@ -6,6 +6,7 @@ documentclass: book
 output:
   #bookdown::pdf_book: default
   bookdown::gitbook: 
+    css: "style.css"
     config:
       download: null 
       toc:
@@ -16,6 +17,10 @@ output:
       mathjax: default
     
 ---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(fig.align='center', out.width='60%', class.source="Rchunk", class.output="Rout", comment="", prompt=TRUE) 
+```
 
 # Disclaimer {-}
 
