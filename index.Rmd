@@ -24,6 +24,8 @@ This is an unapproved draft and does not represent the views of the GAD.
 
 ## Aknowledgements {-}
 
+This book is a fork of [DHSC coding principles book](https://github.com/DataS-DHSC/coding_principles_book).
+
 These principles were inspired by the MOJ [Coding Principles and Standards](https://moj-analytical-services.github.io/our-coding-standards/web/) and developed further by a group at GAD to produce a version targeted at GAD Analysts.
 
 # Introduction {-}
