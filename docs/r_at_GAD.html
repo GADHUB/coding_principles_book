@@ -407,10 +407,10 @@ Therefore, if possible, build an R Package to share and document your code.</p>
 <p>Fortunately, Microsoft keep daily snapshots of CRAN and store them on the <a href="https://mran.microsoft.com/timemachine">Microsoft R Application Network</a>.</p>
 <p>The <code>checkpoint</code> package from Microsoft lets you use these snapshots to install packages as if it were any day since 2017-07-01.</p>
 <p>Simply start your script with:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r Rchunk"><code class="sourceCode r"><span id="cb7-1"><a href="r_at_GAD.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(checkpoint)</span>
-<span id="cb7-2"><a href="r_at_GAD.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb7-3"><a href="r_at_GAD.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">checkpoint</span>(<span class="at">snapshotDate =</span> <span class="st">&quot;2015-01-15&quot;</span>,</span>
-<span id="cb7-4"><a href="r_at_GAD.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>            <span class="at">checkpointLocation =</span> <span class="fu">getwd</span>()) </span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r_at_GAD.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(checkpoint)</span>
+<span id="cb7-2"><a href="r_at_GAD.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="r_at_GAD.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">checkpoint</span>(<span class="at">snapshotDate =</span> <span class="st">&quot;2015-01-15&quot;</span>,</span>
+<span id="cb7-4"><a href="r_at_GAD.html#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">checkpointLocation =</span> <span class="fu">getwd</span>()) </span></code></pre></div>
 <p>This will download and fetch all the packages as they existed on the given date and install them to a library on your home drive.</p>
 <p>Notes:</p>
 <ul>
@@ -438,14 +438,14 @@ For details see the <a href="https://r-pkgs.org/tests.html">‘tests’ chapter 
 <div id="the---and---operators" class="section level3 hasAnchor" number="13.9.1">
 <h3><span class="header-section-number">C.9.1</span> The <code>&lt;-</code> and <code>-&gt;</code> operators<a href="r_at_GAD.html#the---and---operators" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Assignment should always involve assigning a value on the right-hand-side of the <code>&lt;-</code> operator to the object on its left hand side. The <code>-&gt;</code> operator should <em>never</em> be used, and the <code>=</code> operator should not be used for assignment.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb8-1"><a href="r_at_GAD.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co">#good</span></span>
-<span id="cb8-2"><a href="r_at_GAD.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb8-3"><a href="r_at_GAD.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb8-4"><a href="r_at_GAD.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#bad</span></span>
-<span id="cb8-5"><a href="r_at_GAD.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="dv">1</span> <span class="ot">-&gt;</span> a</span>
-<span id="cb8-6"><a href="r_at_GAD.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb8-7"><a href="r_at_GAD.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#also bad</span></span>
-<span id="cb8-8"><a href="r_at_GAD.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> a <span class="ot">=</span> <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb8-1"><a href="r_at_GAD.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#good</span></span>
+<span id="cb8-2"><a href="r_at_GAD.html#cb8-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb8-3"><a href="r_at_GAD.html#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="r_at_GAD.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#bad</span></span>
+<span id="cb8-5"><a href="r_at_GAD.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="ot">-&gt;</span> a</span>
+<span id="cb8-6"><a href="r_at_GAD.html#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="r_at_GAD.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#also bad</span></span>
+<span id="cb8-8"><a href="r_at_GAD.html#cb8-8" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">1</span></span></code></pre></div>
 <p>An exception is where the <code>assign()</code> function or <code>&lt;&lt;-</code> are used, in which case
 assignment can be done without <code>&lt;-</code> or <code>-&gt;</code>.
 This should only be done when <code>&lt;-</code> cannot be used.
@@ -453,32 +453,32 @@ And as with the above, never use <code>-&gt;&gt;</code> instead of <code>&lt;&lt
 <p>Note - if the code below is confusing, section 10.2.4
 here may be of use:
 <a href="https://adv-r.hadley.nz/function-factories.html#stateful-funs" class="uri">https://adv-r.hadley.nz/function-factories.html#stateful-funs</a></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb9-1"><a href="r_at_GAD.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co">#only do this when `&lt;-` will not work, e.g. when</span></span>
-<span id="cb9-2"><a href="r_at_GAD.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#the name of the object being assigned to is stored </span></span>
-<span id="cb9-3"><a href="r_at_GAD.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#as a string:</span></span>
-<span id="cb9-4"><a href="r_at_GAD.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">assign</span>(<span class="st">&#39;a&#39;</span>, <span class="dv">1</span>, <span class="at">envir =</span> <span class="fu">globalenv</span>())</span>
-<span id="cb9-5"><a href="r_at_GAD.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb9-6"><a href="r_at_GAD.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#if assigning to the scope of the enclosing environment, </span></span>
-<span id="cb9-7"><a href="r_at_GAD.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#use `&lt;&lt;-` </span></span>
-<span id="cb9-8"><a href="r_at_GAD.html#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> create_counter <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb9-9"><a href="r_at_GAD.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   i <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb9-10"><a href="r_at_GAD.html#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   </span>
-<span id="cb9-11"><a href="r_at_GAD.html#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">function</span>() {</span>
-<span id="cb9-12"><a href="r_at_GAD.html#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     i <span class="ot">&lt;&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb9-13"><a href="r_at_GAD.html#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">return</span>(i)</span>
-<span id="cb9-14"><a href="r_at_GAD.html#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   }</span>
-<span id="cb9-15"><a href="r_at_GAD.html#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> }</span>
-<span id="cb9-16"><a href="r_at_GAD.html#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb9-17"><a href="r_at_GAD.html#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#but don&#39;t use `&lt;&lt;-` when `&lt;-` would work just as well!</span></span>
-<span id="cb9-18"><a href="r_at_GAD.html#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> </span>
-<span id="cb9-19"><a href="r_at_GAD.html#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#good:</span></span>
-<span id="cb9-20"><a href="r_at_GAD.html#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb9-21"><a href="r_at_GAD.html#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb9-22"><a href="r_at_GAD.html#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#bad:</span></span>
-<span id="cb9-23"><a href="r_at_GAD.html#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> a <span class="ot">&lt;&lt;-</span> <span class="dv">1</span></span>
-<span id="cb9-24"><a href="r_at_GAD.html#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb9-25"><a href="r_at_GAD.html#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#even worse:</span></span>
-<span id="cb9-26"><a href="r_at_GAD.html#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="dv">1</span> <span class="ot">-&gt;&gt;</span> a</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb9-1"><a href="r_at_GAD.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#only do this when `&lt;-` will not work, e.g. when</span></span>
+<span id="cb9-2"><a href="r_at_GAD.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the name of the object being assigned to is stored </span></span>
+<span id="cb9-3"><a href="r_at_GAD.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#as a string:</span></span>
+<span id="cb9-4"><a href="r_at_GAD.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">assign</span>(<span class="st">&#39;a&#39;</span>, <span class="dv">1</span>, <span class="at">envir =</span> <span class="fu">globalenv</span>())</span>
+<span id="cb9-5"><a href="r_at_GAD.html#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="r_at_GAD.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#if assigning to the scope of the enclosing environment, </span></span>
+<span id="cb9-7"><a href="r_at_GAD.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#use `&lt;&lt;-` </span></span>
+<span id="cb9-8"><a href="r_at_GAD.html#cb9-8" aria-hidden="true" tabindex="-1"></a>create_counter <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb9-9"><a href="r_at_GAD.html#cb9-9" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb9-10"><a href="r_at_GAD.html#cb9-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-11"><a href="r_at_GAD.html#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">function</span>() {</span>
+<span id="cb9-12"><a href="r_at_GAD.html#cb9-12" aria-hidden="true" tabindex="-1"></a>    i <span class="ot">&lt;&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb9-13"><a href="r_at_GAD.html#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(i)</span>
+<span id="cb9-14"><a href="r_at_GAD.html#cb9-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-15"><a href="r_at_GAD.html#cb9-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-16"><a href="r_at_GAD.html#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="r_at_GAD.html#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">#but don&#39;t use `&lt;&lt;-` when `&lt;-` would work just as well!</span></span>
+<span id="cb9-18"><a href="r_at_GAD.html#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="r_at_GAD.html#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#good:</span></span>
+<span id="cb9-20"><a href="r_at_GAD.html#cb9-20" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb9-21"><a href="r_at_GAD.html#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="r_at_GAD.html#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#bad:</span></span>
+<span id="cb9-23"><a href="r_at_GAD.html#cb9-23" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;&lt;-</span> <span class="dv">1</span></span>
+<span id="cb9-24"><a href="r_at_GAD.html#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="r_at_GAD.html#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co">#even worse:</span></span>
+<span id="cb9-26"><a href="r_at_GAD.html#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="ot">-&gt;&gt;</span> a</span></code></pre></div>
 </div>
 </div>
 <div id="r_commenting" class="section level2 hasAnchor" number="13.10">
@@ -488,14 +488,14 @@ guidance on good commenting practice.</p>
 <div id="position-of-comments" class="section level3 hasAnchor" number="13.10.1">
 <h3><span class="header-section-number">C.10.1</span> Position of comments<a href="r_at_GAD.html#position-of-comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Comments should appear above related sections of code.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb10-1"><a href="r_at_GAD.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co">#Good:</span></span>
-<span id="cb10-2"><a href="r_at_GAD.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> </span>
-<span id="cb10-3"><a href="r_at_GAD.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#assigning value of 1 to object a:</span></span>
-<span id="cb10-4"><a href="r_at_GAD.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb10-5"><a href="r_at_GAD.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb10-6"><a href="r_at_GAD.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#Bad:</span></span>
-<span id="cb10-7"><a href="r_at_GAD.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> </span>
-<span id="cb10-8"><a href="r_at_GAD.html#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   a <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co">#assigning value of 1 to object a</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb10-1"><a href="r_at_GAD.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Good:</span></span>
+<span id="cb10-2"><a href="r_at_GAD.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="r_at_GAD.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#assigning value of 1 to object a:</span></span>
+<span id="cb10-4"><a href="r_at_GAD.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb10-5"><a href="r_at_GAD.html#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="r_at_GAD.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Bad:</span></span>
+<span id="cb10-7"><a href="r_at_GAD.html#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="r_at_GAD.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co">#assigning value of 1 to object a</span></span></code></pre></div>
 </div>
 <div id="detail-of-comments" class="section level3 hasAnchor" number="13.10.2">
 <h3><span class="header-section-number">C.10.2</span> Detail of comments<a href="r_at_GAD.html#detail-of-comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -508,36 +508,36 @@ the technical proficiency of others working on the project: if you know that the
 someone who has a lot of experience in R, you will rarely need comments that help the reader to understand the
 syntax being employed. Conversely, if it will be checked by a relative novice, it may be helpful to provide
 more details comments about the operations being performed by the code:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb11-1"><a href="r_at_GAD.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co">#The code chunk below changes the format of a dataframe </span></span>
-<span id="cb11-2"><a href="r_at_GAD.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#from a &#39;wide&#39; format to a &#39;long&#39; format. The extent </span></span>
-<span id="cb11-3"><a href="r_at_GAD.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#of commenting required may depend on the technical</span></span>
-<span id="cb11-4"><a href="r_at_GAD.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#proficiency of other people who will work with the </span></span>
-<span id="cb11-5"><a href="r_at_GAD.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#code. If this is subject to uncertainty, err on the</span></span>
-<span id="cb11-6"><a href="r_at_GAD.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#side of more thorough explanations</span></span>
-<span id="cb11-7"><a href="r_at_GAD.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> </span>
-<span id="cb11-8"><a href="r_at_GAD.html#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">data.frame</span>(</span>
-<span id="cb11-9"><a href="r_at_GAD.html#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">animal_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, </span>
-<span id="cb11-10"><a href="r_at_GAD.html#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">weight =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">3</span>), </span>
-<span id="cb11-11"><a href="r_at_GAD.html#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">height =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">3</span>) </span>
-<span id="cb11-12"><a href="r_at_GAD.html#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   ) <span class="sc">%&gt;%</span></span>
-<span id="cb11-13"><a href="r_at_GAD.html#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">pivot_longer</span>(</span>
-<span id="cb11-14"><a href="r_at_GAD.html#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">c</span>(weight, height)</span>
-<span id="cb11-15"><a href="r_at_GAD.html#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   )</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb11-1"><a href="r_at_GAD.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The code chunk below changes the format of a dataframe </span></span>
+<span id="cb11-2"><a href="r_at_GAD.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#from a &#39;wide&#39; format to a &#39;long&#39; format. The extent </span></span>
+<span id="cb11-3"><a href="r_at_GAD.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#of commenting required may depend on the technical</span></span>
+<span id="cb11-4"><a href="r_at_GAD.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#proficiency of other people who will work with the </span></span>
+<span id="cb11-5"><a href="r_at_GAD.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#code. If this is subject to uncertainty, err on the</span></span>
+<span id="cb11-6"><a href="r_at_GAD.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#side of more thorough explanations</span></span>
+<span id="cb11-7"><a href="r_at_GAD.html#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="r_at_GAD.html#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb11-9"><a href="r_at_GAD.html#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">animal_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, </span>
+<span id="cb11-10"><a href="r_at_GAD.html#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">3</span>), </span>
+<span id="cb11-11"><a href="r_at_GAD.html#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">3</span>) </span>
+<span id="cb11-12"><a href="r_at_GAD.html#cb11-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-13"><a href="r_at_GAD.html#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb11-14"><a href="r_at_GAD.html#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(weight, height)</span>
+<span id="cb11-15"><a href="r_at_GAD.html#cb11-15" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
 <div id="outdated-comments" class="section level3 hasAnchor" number="13.10.3">
 <h3><span class="header-section-number">C.10.3</span> Outdated comments<a href="r_at_GAD.html#outdated-comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When making changes to code, it is important to correspondingly update comments.
 Otherwise, comments may become misleading:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb12-1"><a href="r_at_GAD.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co">#Uh-oh! Somebody has updated the &#39;convert_units()&#39; </span></span>
-<span id="cb12-2"><a href="r_at_GAD.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#function so that it converts from grams to </span></span>
-<span id="cb12-3"><a href="r_at_GAD.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#kilograms instead of  grams to tonnes. But they</span></span>
-<span id="cb12-4"><a href="r_at_GAD.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#didn&#39;t update the comment!</span></span>
-<span id="cb12-5"><a href="r_at_GAD.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> </span>
-<span id="cb12-6"><a href="r_at_GAD.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#The function below converts from grams to tonnes:</span></span>
-<span id="cb12-7"><a href="r_at_GAD.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   convert_units <span class="ot">&lt;-</span> <span class="cf">function</span>(value) {</span>
-<span id="cb12-8"><a href="r_at_GAD.html#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     value <span class="ot">&lt;-</span> value <span class="sc">/</span> <span class="dv">1000</span></span>
-<span id="cb12-9"><a href="r_at_GAD.html#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">return</span>(value)</span>
-<span id="cb12-10"><a href="r_at_GAD.html#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   }</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb12-1"><a href="r_at_GAD.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Uh-oh! Somebody has updated the &#39;convert_units()&#39; </span></span>
+<span id="cb12-2"><a href="r_at_GAD.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#function so that it converts from grams to </span></span>
+<span id="cb12-3"><a href="r_at_GAD.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#kilograms instead of  grams to tonnes. But they</span></span>
+<span id="cb12-4"><a href="r_at_GAD.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#didn&#39;t update the comment!</span></span>
+<span id="cb12-5"><a href="r_at_GAD.html#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="r_at_GAD.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#The function below converts from grams to tonnes:</span></span>
+<span id="cb12-7"><a href="r_at_GAD.html#cb12-7" aria-hidden="true" tabindex="-1"></a>  convert_units <span class="ot">&lt;-</span> <span class="cf">function</span>(value) {</span>
+<span id="cb12-8"><a href="r_at_GAD.html#cb12-8" aria-hidden="true" tabindex="-1"></a>    value <span class="ot">&lt;-</span> value <span class="sc">/</span> <span class="dv">1000</span></span>
+<span id="cb12-9"><a href="r_at_GAD.html#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(value)</span>
+<span id="cb12-10"><a href="r_at_GAD.html#cb12-10" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
 </div>
 <div id="different-commenting-contexts" class="section level3 hasAnchor" number="13.10.4">
 <h3><span class="header-section-number">C.10.4</span> Different commenting contexts<a href="r_at_GAD.html#different-commenting-contexts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -568,52 +568,52 @@ and preceded by a space, as should commas</li>
 like <code>%&gt;%</code>, <code>%$%</code> and <code>%T&gt;%</code> should come at the
 end of a line</li>
 </ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb13-1"><a href="r_at_GAD.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co">#good:</span></span>
-<span id="cb13-2"><a href="r_at_GAD.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb13-3"><a href="r_at_GAD.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">animal_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, </span>
-<span id="cb13-4"><a href="r_at_GAD.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="co">#it&#39;s OK to have rnorm() on a single line because the</span></span>
-<span id="cb13-5"><a href="r_at_GAD.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="co">#brackets don&#39;t enclose much code.</span></span>
-<span id="cb13-6"><a href="r_at_GAD.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">weight =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">3</span>), </span>
-<span id="cb13-7"><a href="r_at_GAD.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">height =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">3</span>) </span>
-<span id="cb13-8"><a href="r_at_GAD.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-9"><a href="r_at_GAD.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">pivot_longer</span>(</span>
-<span id="cb13-10"><a href="r_at_GAD.html#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">c</span>(weight, height)</span>
-<span id="cb13-11"><a href="r_at_GAD.html#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   )</span>
-<span id="cb13-12"><a href="r_at_GAD.html#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb13-13"><a href="r_at_GAD.html#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#bad:</span></span>
-<span id="cb13-14"><a href="r_at_GAD.html#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">animal_id=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="at">weight =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, </span>
-<span id="cb13-15"><a href="r_at_GAD.html#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">3</span>),<span class="at">height=</span><span class="fu">rnorm</span>(</span>
-<span id="cb13-16"><a href="r_at_GAD.html#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">7</span>,<span class="at">sd=</span><span class="dv">3</span></span>
-<span id="cb13-17"><a href="r_at_GAD.html#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> )) <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(weight, height)</span>
-<span id="cb13-18"><a href="r_at_GAD.html#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb13-1"><a href="r_at_GAD.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#good:</span></span>
+<span id="cb13-2"><a href="r_at_GAD.html#cb13-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-3"><a href="r_at_GAD.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">animal_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, </span>
+<span id="cb13-4"><a href="r_at_GAD.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#it&#39;s OK to have rnorm() on a single line because the</span></span>
+<span id="cb13-5"><a href="r_at_GAD.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">#brackets don&#39;t enclose much code.</span></span>
+<span id="cb13-6"><a href="r_at_GAD.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">weight =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">3</span>), </span>
+<span id="cb13-7"><a href="r_at_GAD.html#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">3</span>) </span>
+<span id="cb13-8"><a href="r_at_GAD.html#cb13-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-9"><a href="r_at_GAD.html#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb13-10"><a href="r_at_GAD.html#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(weight, height)</span>
+<span id="cb13-11"><a href="r_at_GAD.html#cb13-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-12"><a href="r_at_GAD.html#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="r_at_GAD.html#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#bad:</span></span>
+<span id="cb13-14"><a href="r_at_GAD.html#cb13-14" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">animal_id=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="at">weight =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, </span>
+<span id="cb13-15"><a href="r_at_GAD.html#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">3</span>),<span class="at">height=</span><span class="fu">rnorm</span>(</span>
+<span id="cb13-16"><a href="r_at_GAD.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">7</span>,<span class="at">sd=</span><span class="dv">3</span></span>
+<span id="cb13-17"><a href="r_at_GAD.html#cb13-17" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(weight, height)</span>
+<span id="cb13-18"><a href="r_at_GAD.html#cb13-18" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="r_data_management" class="section level2 hasAnchor" number="13.12">
 <h2><span class="header-section-number">C.12</span> Data management<a href="r_at_GAD.html#r_data_management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If possible, it is better to store data in tidy dataframes rather than,
 for example, in nested lists:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb14-1"><a href="r_at_GAD.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co">#good:</span></span>
-<span id="cb14-2"><a href="r_at_GAD.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb14-3"><a href="r_at_GAD.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">&#39;male&#39;</span>, <span class="st">&#39;male&#39;</span>,<span class="st">&#39;female&#39;</span>,<span class="st">&#39;female&#39;</span>), </span>
-<span id="cb14-4"><a href="r_at_GAD.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">scheme =</span> <span class="fu">c</span>(<span class="st">&#39;legacy&#39;</span>, <span class="st">&#39;care&#39;</span>, <span class="st">&#39;legacy&#39;</span>,<span class="st">&#39;care&#39;</span>),</span>
-<span id="cb14-5"><a href="r_at_GAD.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">2000</span>, <span class="dv">3000</span>, <span class="dv">4000</span>)</span>
-<span id="cb14-6"><a href="r_at_GAD.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> )</span>
-<span id="cb14-7"><a href="r_at_GAD.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb14-8"><a href="r_at_GAD.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#bad:</span></span>
-<span id="cb14-9"><a href="r_at_GAD.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> data <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb14-10"><a href="r_at_GAD.html#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">male =</span> <span class="fu">list</span>(<span class="at">legacy =</span> <span class="dv">1000</span>, <span class="at">care =</span> <span class="dv">2000</span>),</span>
-<span id="cb14-11"><a href="r_at_GAD.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">female =</span> <span class="fu">list</span>(<span class="at">legacy =</span> <span class="dv">3000</span>, <span class="at">care =</span> <span class="dv">4000</span>)</span>
-<span id="cb14-12"><a href="r_at_GAD.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> )</span>
-<span id="cb14-13"><a href="r_at_GAD.html#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb14-14"><a href="r_at_GAD.html#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#It often makes more sense to create a tibble</span></span>
-<span id="cb14-15"><a href="r_at_GAD.html#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#rather than a standard dataframe, but this</span></span>
-<span id="cb14-16"><a href="r_at_GAD.html#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#can depend on context:</span></span>
-<span id="cb14-17"><a href="r_at_GAD.html#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> </span>
-<span id="cb14-18"><a href="r_at_GAD.html#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#also good:</span></span>
-<span id="cb14-19"><a href="r_at_GAD.html#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> data <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tibble</span>(</span>
-<span id="cb14-20"><a href="r_at_GAD.html#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">&#39;male&#39;</span>, <span class="st">&#39;male&#39;</span>,<span class="st">&#39;female&#39;</span>,<span class="st">&#39;female&#39;</span>), </span>
-<span id="cb14-21"><a href="r_at_GAD.html#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">scheme =</span> <span class="fu">c</span>(<span class="st">&#39;legacy&#39;</span>, <span class="st">&#39;care&#39;</span>, <span class="st">&#39;legacy&#39;</span>,<span class="st">&#39;care&#39;</span>),</span>
-<span id="cb14-22"><a href="r_at_GAD.html#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>   <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">2000</span>, <span class="dv">3000</span>, <span class="dv">4000</span>)</span>
-<span id="cb14-23"><a href="r_at_GAD.html#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb14-1"><a href="r_at_GAD.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#good:</span></span>
+<span id="cb14-2"><a href="r_at_GAD.html#cb14-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb14-3"><a href="r_at_GAD.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">&#39;male&#39;</span>, <span class="st">&#39;male&#39;</span>,<span class="st">&#39;female&#39;</span>,<span class="st">&#39;female&#39;</span>), </span>
+<span id="cb14-4"><a href="r_at_GAD.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">scheme =</span> <span class="fu">c</span>(<span class="st">&#39;legacy&#39;</span>, <span class="st">&#39;care&#39;</span>, <span class="st">&#39;legacy&#39;</span>,<span class="st">&#39;care&#39;</span>),</span>
+<span id="cb14-5"><a href="r_at_GAD.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">2000</span>, <span class="dv">3000</span>, <span class="dv">4000</span>)</span>
+<span id="cb14-6"><a href="r_at_GAD.html#cb14-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-7"><a href="r_at_GAD.html#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="r_at_GAD.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#bad:</span></span>
+<span id="cb14-9"><a href="r_at_GAD.html#cb14-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb14-10"><a href="r_at_GAD.html#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">male =</span> <span class="fu">list</span>(<span class="at">legacy =</span> <span class="dv">1000</span>, <span class="at">care =</span> <span class="dv">2000</span>),</span>
+<span id="cb14-11"><a href="r_at_GAD.html#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">female =</span> <span class="fu">list</span>(<span class="at">legacy =</span> <span class="dv">3000</span>, <span class="at">care =</span> <span class="dv">4000</span>)</span>
+<span id="cb14-12"><a href="r_at_GAD.html#cb14-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-13"><a href="r_at_GAD.html#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="r_at_GAD.html#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">#It often makes more sense to create a tibble</span></span>
+<span id="cb14-15"><a href="r_at_GAD.html#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co">#rather than a standard dataframe, but this</span></span>
+<span id="cb14-16"><a href="r_at_GAD.html#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co">#can depend on context:</span></span>
+<span id="cb14-17"><a href="r_at_GAD.html#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="r_at_GAD.html#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="co">#also good:</span></span>
+<span id="cb14-19"><a href="r_at_GAD.html#cb14-19" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb14-20"><a href="r_at_GAD.html#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">&#39;male&#39;</span>, <span class="st">&#39;male&#39;</span>,<span class="st">&#39;female&#39;</span>,<span class="st">&#39;female&#39;</span>), </span>
+<span id="cb14-21"><a href="r_at_GAD.html#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">scheme =</span> <span class="fu">c</span>(<span class="st">&#39;legacy&#39;</span>, <span class="st">&#39;care&#39;</span>, <span class="st">&#39;legacy&#39;</span>,<span class="st">&#39;care&#39;</span>),</span>
+<span id="cb14-22"><a href="r_at_GAD.html#cb14-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">2000</span>, <span class="dv">3000</span>, <span class="dv">4000</span>)</span>
+<span id="cb14-23"><a href="r_at_GAD.html#cb14-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="r_naming_conventions" class="section level2 hasAnchor" number="13.13">
 <h2><span class="header-section-number">C.13</span> Naming conventions<a href="r_at_GAD.html#r_naming_conventions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -628,29 +628,29 @@ involves replacing spaces with underscores and removing all capitalisation:</p>
 <p>In addition, we should try to avoid making names too long (unlike the above),
 but this should be balanced against the need to avoid shortening long strings
 into incomprehensible abbreviations</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb15-1"><a href="r_at_GAD.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co">#bad - not camel case or snake case:</span></span>
-<span id="cb15-2"><a href="r_at_GAD.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> my_Object_Nm <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb15-3"><a href="r_at_GAD.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> AnotherOBJECT <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb15-4"><a href="r_at_GAD.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb15-5"><a href="r_at_GAD.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#bad - mixing camel case and snake case in same code:</span></span>
-<span id="cb15-6"><a href="r_at_GAD.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> my_object_name <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb15-7"><a href="r_at_GAD.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> anotherObject <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb15-8"><a href="r_at_GAD.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb15-9"><a href="r_at_GAD.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#bad - confusing abbreviations or arbitrary names make it</span></span>
-<span id="cb15-10"><a href="r_at_GAD.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#difficult to easily discern what the objects are supposed</span></span>
-<span id="cb15-11"><a href="r_at_GAD.html#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#to represent:</span></span>
-<span id="cb15-12"><a href="r_at_GAD.html#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> m_o_n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb15-13"><a href="r_at_GAD.html#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb15-14"><a href="r_at_GAD.html#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb15-15"><a href="r_at_GAD.html#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#good - exclusively camel case, </span></span>
-<span id="cb15-16"><a href="r_at_GAD.html#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#abbreviations comprehensible:</span></span>
-<span id="cb15-17"><a href="r_at_GAD.html#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> myObjName <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb15-18"><a href="r_at_GAD.html#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> anotherObj <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb15-19"><a href="r_at_GAD.html#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb15-20"><a href="r_at_GAD.html#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#good - exclusively snake case, </span></span>
-<span id="cb15-21"><a href="r_at_GAD.html#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#abbreviations comprehensible:</span></span>
-<span id="cb15-22"><a href="r_at_GAD.html#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> my_obj_name <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb15-23"><a href="r_at_GAD.html#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> another_obj <span class="ot">&lt;-</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb15-1"><a href="r_at_GAD.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#bad - not camel case or snake case:</span></span>
+<span id="cb15-2"><a href="r_at_GAD.html#cb15-2" aria-hidden="true" tabindex="-1"></a>my_Object_Nm <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb15-3"><a href="r_at_GAD.html#cb15-3" aria-hidden="true" tabindex="-1"></a>AnotherOBJECT <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb15-4"><a href="r_at_GAD.html#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="r_at_GAD.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#bad - mixing camel case and snake case in same code:</span></span>
+<span id="cb15-6"><a href="r_at_GAD.html#cb15-6" aria-hidden="true" tabindex="-1"></a>my_object_name <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb15-7"><a href="r_at_GAD.html#cb15-7" aria-hidden="true" tabindex="-1"></a>anotherObject <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb15-8"><a href="r_at_GAD.html#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="r_at_GAD.html#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#bad - confusing abbreviations or arbitrary names make it</span></span>
+<span id="cb15-10"><a href="r_at_GAD.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#difficult to easily discern what the objects are supposed</span></span>
+<span id="cb15-11"><a href="r_at_GAD.html#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co">#to represent:</span></span>
+<span id="cb15-12"><a href="r_at_GAD.html#cb15-12" aria-hidden="true" tabindex="-1"></a>m_o_n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb15-13"><a href="r_at_GAD.html#cb15-13" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb15-14"><a href="r_at_GAD.html#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="r_at_GAD.html#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co">#good - exclusively camel case, </span></span>
+<span id="cb15-16"><a href="r_at_GAD.html#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">#abbreviations comprehensible:</span></span>
+<span id="cb15-17"><a href="r_at_GAD.html#cb15-17" aria-hidden="true" tabindex="-1"></a>myObjName <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb15-18"><a href="r_at_GAD.html#cb15-18" aria-hidden="true" tabindex="-1"></a>anotherObj <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb15-19"><a href="r_at_GAD.html#cb15-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-20"><a href="r_at_GAD.html#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="co">#good - exclusively snake case, </span></span>
+<span id="cb15-21"><a href="r_at_GAD.html#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="co">#abbreviations comprehensible:</span></span>
+<span id="cb15-22"><a href="r_at_GAD.html#cb15-22" aria-hidden="true" tabindex="-1"></a>my_obj_name <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb15-23"><a href="r_at_GAD.html#cb15-23" aria-hidden="true" tabindex="-1"></a>another_obj <span class="ot">&lt;-</span> <span class="dv">2</span></span></code></pre></div>
 </div>
 <div id="r_folder_structure_and_path_specification" class="section level2 hasAnchor" number="13.14">
 <h2><span class="header-section-number">C.14</span> Folder structure and path specification<a href="r_at_GAD.html#r_folder_structure_and_path_specification" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -660,47 +660,47 @@ relative file paths. The advantage of this is that the relevant
 folder can contain all code, data and other necessary files and
 can be moved around to different parent folders and locations, without
 paths needing to be re-written when, for example, code is sent to a client:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb16-1"><a href="r_at_GAD.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">###Assume we have a folder structure as follows and that</span></span>
-<span id="cb16-2"><a href="r_at_GAD.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="do">###the code below is found in &#39;our_code.R&#39;</span></span>
-<span id="cb16-3"><a href="r_at_GAD.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> </span>
-<span id="cb16-4"><a href="r_at_GAD.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#project_folder</span></span>
-<span id="cb16-5"><a href="r_at_GAD.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#   - data_folder</span></span>
-<span id="cb16-6"><a href="r_at_GAD.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#     - dataset_1.csv</span></span>
-<span id="cb16-7"><a href="r_at_GAD.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#     - dataset_2.csv</span></span>
-<span id="cb16-8"><a href="r_at_GAD.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#   - code_folder</span></span>
-<span id="cb16-9"><a href="r_at_GAD.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#     - our_code.R</span></span>
-<span id="cb16-10"><a href="r_at_GAD.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#     - more_code.R</span></span>
-<span id="cb16-11"><a href="r_at_GAD.html#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> </span>
-<span id="cb16-12"><a href="r_at_GAD.html#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#good:</span></span>
-<span id="cb16-13"><a href="r_at_GAD.html#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   </span>
-<span id="cb16-14"><a href="r_at_GAD.html#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#load packages</span></span>
-<span id="cb16-15"><a href="r_at_GAD.html#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">library</span>(readr)</span>
-<span id="cb16-16"><a href="r_at_GAD.html#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb16-17"><a href="r_at_GAD.html#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#read in data using relative paths</span></span>
-<span id="cb16-18"><a href="r_at_GAD.html#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dataset_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;</span></span>
-<span id="cb16-19"><a href="r_at_GAD.html#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="st">+       ../data_folder/dataset_1.csv&#39;</span></span>
-<span id="cb16-20"><a href="r_at_GAD.html#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>       )</span>
-<span id="cb16-21"><a href="r_at_GAD.html#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dataset_2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;</span></span>
-<span id="cb16-22"><a href="r_at_GAD.html#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="st">+       ../data_folder/dataset_2.csv&#39;</span></span>
-<span id="cb16-23"><a href="r_at_GAD.html#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>       )</span>
-<span id="cb16-24"><a href="r_at_GAD.html#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   <span class="co">#create user-defined functions</span></span>
-<span id="cb16-25"><a href="r_at_GAD.html#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">source</span>(<span class="st">&#39;./more_code.R&#39;</span>)</span>
-<span id="cb16-26"><a href="r_at_GAD.html#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb16-27"><a href="r_at_GAD.html#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> <span class="co">#bad:</span></span>
-<span id="cb16-28"><a href="r_at_GAD.html#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   </span>
-<span id="cb16-29"><a href="r_at_GAD.html#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#load packages</span></span>
-<span id="cb16-30"><a href="r_at_GAD.html#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">library</span>(readr)</span>
-<span id="cb16-31"><a href="r_at_GAD.html#cb16-31" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb16-32"><a href="r_at_GAD.html#cb16-32" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#read in data using absolute paths</span></span>
-<span id="cb16-33"><a href="r_at_GAD.html#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   dataset_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb16-34"><a href="r_at_GAD.html#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     <span class="st">&#39;&lt;long_and_convoluted_path&gt;/dataset_1.csv&#39;</span></span>
-<span id="cb16-35"><a href="r_at_GAD.html#cb16-35" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     )</span>
-<span id="cb16-36"><a href="r_at_GAD.html#cb16-36" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   dataset_2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb16-37"><a href="r_at_GAD.html#cb16-37" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     <span class="st">&#39;&lt;long_and_convoluted_path&gt;/dataset_2.csv&#39;</span></span>
-<span id="cb16-38"><a href="r_at_GAD.html#cb16-38" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span>     )</span>
-<span id="cb16-39"><a href="r_at_GAD.html#cb16-39" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span>   </span>
-<span id="cb16-40"><a href="r_at_GAD.html#cb16-40" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="co">#create user-defined functions</span></span>
-<span id="cb16-41"><a href="r_at_GAD.html#cb16-41" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span>   <span class="fu">source</span>(<span class="st">&#39;&lt;long_and_convoluted_path&gt;/more_code.R&#39;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r Rchunksk"><code class="sourceCode r"><span id="cb16-1"><a href="r_at_GAD.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">###Assume we have a folder structure as follows and that</span></span>
+<span id="cb16-2"><a href="r_at_GAD.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="do">###the code below is found in &#39;our_code.R&#39;</span></span>
+<span id="cb16-3"><a href="r_at_GAD.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="r_at_GAD.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#project_folder</span></span>
+<span id="cb16-5"><a href="r_at_GAD.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   - data_folder</span></span>
+<span id="cb16-6"><a href="r_at_GAD.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     - dataset_1.csv</span></span>
+<span id="cb16-7"><a href="r_at_GAD.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     - dataset_2.csv</span></span>
+<span id="cb16-8"><a href="r_at_GAD.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   - code_folder</span></span>
+<span id="cb16-9"><a href="r_at_GAD.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     - our_code.R</span></span>
+<span id="cb16-10"><a href="r_at_GAD.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co">#     - more_code.R</span></span>
+<span id="cb16-11"><a href="r_at_GAD.html#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="r_at_GAD.html#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co">#good:</span></span>
+<span id="cb16-13"><a href="r_at_GAD.html#cb16-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-14"><a href="r_at_GAD.html#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">#load packages</span></span>
+<span id="cb16-15"><a href="r_at_GAD.html#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(readr)</span>
+<span id="cb16-16"><a href="r_at_GAD.html#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="r_at_GAD.html#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#read in data using relative paths</span></span>
+<span id="cb16-18"><a href="r_at_GAD.html#cb16-18" aria-hidden="true" tabindex="-1"></a>  dataset_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;</span></span>
+<span id="cb16-19"><a href="r_at_GAD.html#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="st">      ../data_folder/dataset_1.csv&#39;</span></span>
+<span id="cb16-20"><a href="r_at_GAD.html#cb16-20" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb16-21"><a href="r_at_GAD.html#cb16-21" aria-hidden="true" tabindex="-1"></a>  dataset_2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;</span></span>
+<span id="cb16-22"><a href="r_at_GAD.html#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="st">      ../data_folder/dataset_2.csv&#39;</span></span>
+<span id="cb16-23"><a href="r_at_GAD.html#cb16-23" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb16-24"><a href="r_at_GAD.html#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">#create user-defined functions</span></span>
+<span id="cb16-25"><a href="r_at_GAD.html#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">&#39;./more_code.R&#39;</span>)</span>
+<span id="cb16-26"><a href="r_at_GAD.html#cb16-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-27"><a href="r_at_GAD.html#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="co">#bad:</span></span>
+<span id="cb16-28"><a href="r_at_GAD.html#cb16-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-29"><a href="r_at_GAD.html#cb16-29" aria-hidden="true" tabindex="-1"></a>  <span class="co">#load packages</span></span>
+<span id="cb16-30"><a href="r_at_GAD.html#cb16-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(readr)</span>
+<span id="cb16-31"><a href="r_at_GAD.html#cb16-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-32"><a href="r_at_GAD.html#cb16-32" aria-hidden="true" tabindex="-1"></a>  <span class="co">#read in data using absolute paths</span></span>
+<span id="cb16-33"><a href="r_at_GAD.html#cb16-33" aria-hidden="true" tabindex="-1"></a>  dataset_1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb16-34"><a href="r_at_GAD.html#cb16-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;&lt;long_and_convoluted_path&gt;/dataset_1.csv&#39;</span></span>
+<span id="cb16-35"><a href="r_at_GAD.html#cb16-35" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-36"><a href="r_at_GAD.html#cb16-36" aria-hidden="true" tabindex="-1"></a>  dataset_2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb16-37"><a href="r_at_GAD.html#cb16-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;&lt;long_and_convoluted_path&gt;/dataset_2.csv&#39;</span></span>
+<span id="cb16-38"><a href="r_at_GAD.html#cb16-38" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-39"><a href="r_at_GAD.html#cb16-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-40"><a href="r_at_GAD.html#cb16-40" aria-hidden="true" tabindex="-1"></a>  <span class="co">#create user-defined functions</span></span>
+<span id="cb16-41"><a href="r_at_GAD.html#cb16-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">&#39;&lt;long_and_convoluted_path&gt;/more_code.R&#39;</span>) </span></code></pre></div>
 </div>
 <div id="r_reading_in_data_from_csv_files" class="section level2 hasAnchor" number="13.15">
 <h2><span class="header-section-number">C.15</span> Reading in data from csv files<a href="r_at_GAD.html#r_reading_in_data_from_csv_files" class="anchor-section" aria-label="Anchor link to header"></a></h2>

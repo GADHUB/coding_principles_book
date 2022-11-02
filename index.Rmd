@@ -18,10 +18,6 @@ output:
     
 ---
 
-```{r, echo=FALSE}
-knitr::opts_chunk$set(fig.align='center', out.width='60%', class.source="Rchunk", class.output="Rout", comment="", prompt=TRUE) 
-```
-
 # Disclaimer {-}
 
 This is an unapproved draft and does not represent the views of the GAD.
