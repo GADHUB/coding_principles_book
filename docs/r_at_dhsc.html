@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>C R at DHSC | DHSC Coding Principles</title>
+  <meta name="description" content="C R at DHSC | DHSC Coding Principles" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="C R at DHSC | DHSC Coding Principles" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="C R at DHSC | DHSC Coding Principles" />
+  
+  
+  
+
+<meta name="author" content="DHSC Office of the Chief Analyst" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="py_at_dhsc.html"/>
+<link rel="next" href="rap.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Disclaimer</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#aknowledgements"><i class="fa fa-check"></i>Aknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="summary-table.html"><a href="summary-table.html"><i class="fa fa-check"></i>Summary Table</a></li>
+<li class="part"><span><b>The Principles</b></span></li>
+<li class="chapter" data-level="1" data-path="version_control.html"><a href="version_control.html"><i class="fa fa-check"></i><b>1</b> Use Version Control</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="version_control.html"><a href="version_control.html#what_is_vc"><i class="fa fa-check"></i><b>1.1</b> What is version control?</a></li>
+<li class="chapter" data-level="1.2" data-path="version_control.html"><a href="version_control.html#git"><i class="fa fa-check"></i><b>1.2</b> Git - (program for version control)</a></li>
+<li class="chapter" data-level="1.3" data-path="version_control.html"><a href="version_control.html#github"><i class="fa fa-check"></i><b>1.3</b> GitHub - (service for storing code version controlled using git)</a></li>
+<li class="chapter" data-level="1.4" data-path="version_control.html"><a href="version_control.html#effective_vc"><i class="fa fa-check"></i><b>1.4</b> Using Git &amp; GitHub Effectively</a></li>
+<li class="chapter" data-level="1.5" data-path="version_control.html"><a href="version_control.html#workflow_vc"><i class="fa fa-check"></i><b>1.5</b> Version Control Workflow</a></li>
+<li class="chapter" data-level="1.6" data-path="version_control.html"><a href="version_control.html#code-in-the-open"><i class="fa fa-check"></i><b>1.6</b> Code in the Open</a></li>
+<li class="chapter" data-level="1.7" data-path="version_control.html"><a href="version_control.html#manual-version-control"><i class="fa fa-check"></i><b>1.7</b> Manual Version Control</a></li>
+<li class="chapter" data-level="1.8" data-path="version_control.html"><a href="version_control.html#git-github-at-dhsc"><i class="fa fa-check"></i><b>1.8</b> Git &amp; GitHub at DHSC</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="easy_to_read.html"><a href="easy_to_read.html"><i class="fa fa-check"></i><b>2</b> Write Easy to Read Code</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="easy_to_read.html"><a href="easy_to_read.html#style_guides"><i class="fa fa-check"></i><b>2.1</b> Style Guides</a></li>
+<li class="chapter" data-level="2.2" data-path="easy_to_read.html"><a href="easy_to_read.html#linters"><i class="fa fa-check"></i><b>2.2</b> Linters &amp; Code Formatters</a></li>
+<li class="chapter" data-level="2.3" data-path="easy_to_read.html"><a href="easy_to_read.html#meaningful_names"><i class="fa fa-check"></i><b>2.3</b> Meaningful Names</a></li>
+<li class="chapter" data-level="2.4" data-path="easy_to_read.html"><a href="easy_to_read.html#dont_overlap"><i class="fa fa-check"></i><b>2.4</b> Avoid Overlaps</a></li>
+<li class="chapter" data-level="2.5" data-path="easy_to_read.html"><a href="easy_to_read.html#name_formats"><i class="fa fa-check"></i><b>2.5</b> Name Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="correct_clear_concise.html"><a href="correct_clear_concise.html"><i class="fa fa-check"></i><b>3</b> Correct, Clear, Fast &amp; Concise - In That Order</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="correct_clear_concise.html"><a href="correct_clear_concise.html#ccfc_correct"><i class="fa fa-check"></i><b>3.1</b> Correct</a></li>
+<li class="chapter" data-level="3.2" data-path="correct_clear_concise.html"><a href="correct_clear_concise.html#ccfc_clear"><i class="fa fa-check"></i><b>3.2</b> Clear</a></li>
+<li class="chapter" data-level="3.3" data-path="correct_clear_concise.html"><a href="correct_clear_concise.html#ccfc_fast"><i class="fa fa-check"></i><b>3.3</b> Fast</a></li>
+<li class="chapter" data-level="3.4" data-path="correct_clear_concise.html"><a href="correct_clear_concise.html#ccfc_concise"><i class="fa fa-check"></i><b>3.4</b> Concise</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="flexible_code.html"><a href="flexible_code.html"><i class="fa fa-check"></i><b>4</b> Write Flexible Code</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="flexible_code.html"><a href="flexible_code.html#structure"><i class="fa fa-check"></i><b>4.1</b> Structure</a></li>
+<li class="chapter" data-level="4.2" data-path="flexible_code.html"><a href="flexible_code.html#breakup"><i class="fa fa-check"></i><b>4.2</b> Break up Your Code</a></li>
+<li class="chapter" data-level="4.3" data-path="flexible_code.html"><a href="flexible_code.html#dry"><i class="fa fa-check"></i><b>4.3</b> Don’t Repeat Yourself</a></li>
+<li class="chapter" data-level="4.4" data-path="flexible_code.html"><a href="flexible_code.html#input_validation"><i class="fa fa-check"></i><b>4.4</b> Input Validation</a></li>
+<li class="chapter" data-level="4.5" data-path="flexible_code.html"><a href="flexible_code.html#error_handling"><i class="fa fa-check"></i><b>4.5</b> Error Handling</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="comments.html"><a href="comments.html"><i class="fa fa-check"></i><b>5</b> Comment Effectively</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="comments.html"><a href="comments.html#comment-style"><i class="fa fa-check"></i><b>5.1</b> Comment Style</a></li>
+<li class="chapter" data-level="5.2" data-path="comments.html"><a href="comments.html#what-to-capture"><i class="fa fa-check"></i><b>5.2</b> What to Capture</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="comments.html"><a href="comments.html#what-not-to-capture"><i class="fa fa-check"></i><b>5.2.1</b> What not to Capture</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="comments.html"><a href="comments.html#alternatives"><i class="fa fa-check"></i><b>5.3</b> Alternatives</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>6</b> Document Your Work</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="documentation.html"><a href="documentation.html#aqua"><i class="fa fa-check"></i><b>6.1</b> Aqua Book Guidance for Technical Documentation:</a></li>
+<li class="chapter" data-level="6.2" data-path="documentation.html"><a href="documentation.html#as_you_go"><i class="fa fa-check"></i><b>6.2</b> Document as you Go</a></li>
+<li class="chapter" data-level="6.3" data-path="documentation.html"><a href="documentation.html#doxygen"><i class="fa fa-check"></i><b>6.3</b> Use a Documentation Generator</a></li>
+<li class="chapter" data-level="6.4" data-path="documentation.html"><a href="documentation.html#readme"><i class="fa fa-check"></i><b>6.4</b> <code>README.md</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="demonstrably_correct.html"><a href="demonstrably_correct.html"><i class="fa fa-check"></i><b>7</b> Be Demonstrably Correct</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="demonstrably_correct.html"><a href="demonstrably_correct.html#qa_code_too"><i class="fa fa-check"></i><b>7.1</b> Quality Assurance Applies to Code</a></li>
+<li class="chapter" data-level="7.2" data-path="demonstrably_correct.html"><a href="demonstrably_correct.html#unit_tests"><i class="fa fa-check"></i><b>7.2</b> Testing Frameworks</a></li>
+<li class="chapter" data-level="7.3" data-path="demonstrably_correct.html"><a href="demonstrably_correct.html#version-control-integration"><i class="fa fa-check"></i><b>7.3</b> Version Control Integration</a></li>
+<li class="chapter" data-level="7.4" data-path="demonstrably_correct.html"><a href="demonstrably_correct.html#rap_demonstrable"><i class="fa fa-check"></i><b>7.4</b> Reproducible Analytical Pipelines</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sensible_defaults.html"><a href="sensible_defaults.html"><i class="fa fa-check"></i><b>8</b> Use Sensible Defaults</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sensible_defaults.html"><a href="sensible_defaults.html#general_defaults"><i class="fa fa-check"></i><b>8.1</b> General Defaults</a></li>
+<li class="chapter" data-level="8.2" data-path="sensible_defaults.html"><a href="sensible_defaults.html#language-specific-defaults"><i class="fa fa-check"></i><b>8.2</b> Language Specific Defaults:</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="reproducible.html"><a href="reproducible.html"><i class="fa fa-check"></i><b>9</b> Be Reproducible</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="reproducible.html"><a href="reproducible.html#unambiguous_docs"><i class="fa fa-check"></i><b>9.1</b> Unambiguous Documentation for Reproducibility</a></li>
+<li class="chapter" data-level="9.2" data-path="reproducible.html"><a href="reproducible.html#portability"><i class="fa fa-check"></i><b>9.2</b> Portability</a></li>
+<li class="chapter" data-level="9.3" data-path="reproducible.html"><a href="reproducible.html#projects"><i class="fa fa-check"></i><b>9.3</b> Project Structure</a></li>
+<li class="chapter" data-level="9.4" data-path="reproducible.html"><a href="reproducible.html#rap_section"><i class="fa fa-check"></i><b>9.4</b> Reproducible Analytical Pipelines</a></li>
+<li class="chapter" data-level="9.5" data-path="reproducible.html"><a href="reproducible.html#packages"><i class="fa fa-check"></i><b>9.5</b> Packages and Modules</a></li>
+<li class="chapter" data-level="9.6" data-path="reproducible.html"><a href="reproducible.html#containers"><i class="fa fa-check"></i><b>9.6</b> Containers / Docker</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="data_structure.html"><a href="data_structure.html"><i class="fa fa-check"></i><b>10</b> Use Appropriate and Tidy Data</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="data_structure.html"><a href="data_structure.html#tidy_data"><i class="fa fa-check"></i><b>10.1</b> Tidy Data?</a></li>
+<li class="chapter" data-level="10.2" data-path="data_structure.html"><a href="data_structure.html#data_types"><i class="fa fa-check"></i><b>10.2</b> Data Types and Structures</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="data_structure.html"><a href="data_structure.html#r"><i class="fa fa-check"></i><b>10.2.1</b> R</a></li>
+<li class="chapter" data-level="10.2.2" data-path="data_structure.html"><a href="data_structure.html#python"><i class="fa fa-check"></i><b>10.2.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="data_structure.html"><a href="data_structure.html#schema"><i class="fa fa-check"></i><b>10.3</b> Schema</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="coding-resources.html"><a href="coding-resources.html"><i class="fa fa-check"></i><b>A</b> Coding Resources</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="coding-resources.html"><a href="coding-resources.html#general"><i class="fa fa-check"></i><b>A.1</b> General</a></li>
+<li class="chapter" data-level="A.2" data-path="coding-resources.html"><a href="coding-resources.html#r-1"><i class="fa fa-check"></i><b>A.2</b> R</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="coding-resources.html"><a href="coding-resources.html#books"><i class="fa fa-check"></i><b>A.2.1</b> Books</a></li>
+<li class="chapter" data-level="A.2.2" data-path="coding-resources.html"><a href="coding-resources.html#communities"><i class="fa fa-check"></i><b>A.2.2</b> Communities</a></li>
+<li class="chapter" data-level="A.2.3" data-path="coding-resources.html"><a href="coding-resources.html#websites-and-blogs"><i class="fa fa-check"></i><b>A.2.3</b> Websites and Blogs</a></li>
+<li class="chapter" data-level="A.2.4" data-path="coding-resources.html"><a href="coding-resources.html#guides-tutorials-and-courses"><i class="fa fa-check"></i><b>A.2.4</b> Guides, Tutorials and Courses</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="coding-resources.html"><a href="coding-resources.html#python-1"><i class="fa fa-check"></i><b>A.3</b> Python</a>
+<ul>
+<li class="chapter" data-level="A.3.1" data-path="coding-resources.html"><a href="coding-resources.html#books-1"><i class="fa fa-check"></i><b>A.3.1</b> Books</a></li>
+<li class="chapter" data-level="A.3.2" data-path="coding-resources.html"><a href="coding-resources.html#communities-1"><i class="fa fa-check"></i><b>A.3.2</b> Communities</a></li>
+<li class="chapter" data-level="A.3.3" data-path="coding-resources.html"><a href="coding-resources.html#websites-and-blogs-1"><i class="fa fa-check"></i><b>A.3.3</b> Websites and Blogs</a></li>
+<li class="chapter" data-level="A.3.4" data-path="coding-resources.html"><a href="coding-resources.html#guides-and-tutorials"><i class="fa fa-check"></i><b>A.3.4</b> Guides and Tutorials</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="coding-resources.html"><a href="coding-resources.html#git-1"><i class="fa fa-check"></i><b>A.4</b> Git</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html"><i class="fa fa-check"></i><b>B</b> Python at DHSC</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html#version-ide"><i class="fa fa-check"></i><b>B.1</b> Version &amp; IDE</a></li>
+<li class="chapter" data-level="B.2" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html#default-packages-and-add-ins"><i class="fa fa-check"></i><b>B.2</b> Default Packages and Add Ins</a></li>
+<li class="chapter" data-level="B.3" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html#general-1"><i class="fa fa-check"></i><b>B.3</b> General</a></li>
+<li class="chapter" data-level="B.4" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html#py_default_packages"><i class="fa fa-check"></i><b>B.4</b> Packages</a></li>
+<li class="chapter" data-level="B.5" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html#py_projects"><i class="fa fa-check"></i><b>B.5</b> Project Workflow</a></li>
+<li class="chapter" data-level="B.6" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html#py_packages"><i class="fa fa-check"></i><b>B.6</b> Packaging Your Code</a></li>
+<li class="chapter" data-level="B.7" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html#py_dependencies"><i class="fa fa-check"></i><b>B.7</b> Managing Dependencies</a></li>
+<li class="chapter" data-level="B.8" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html#py_errorhandling"><i class="fa fa-check"></i><b>B.8</b> Error Handling</a></li>
+<li class="chapter" data-level="B.9" data-path="py_at_dhsc.html"><a href="py_at_dhsc.html#py_tests"><i class="fa fa-check"></i><b>B.9</b> Unit Testing</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html"><i class="fa fa-check"></i><b>C</b> R at DHSC</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html#r-version-ide"><i class="fa fa-check"></i><b>C.1</b> R Version &amp; IDE</a></li>
+<li class="chapter" data-level="C.2" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html#general-2"><i class="fa fa-check"></i><b>C.2</b> General</a></li>
+<li class="chapter" data-level="C.3" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html#r_default_packages"><i class="fa fa-check"></i><b>C.3</b> Packages</a></li>
+<li class="chapter" data-level="C.4" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html#r_projects"><i class="fa fa-check"></i><b>C.4</b> Project Workflow</a></li>
+<li class="chapter" data-level="C.5" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html#r_package"><i class="fa fa-check"></i><b>C.5</b> Packaging Your Code</a></li>
+<li class="chapter" data-level="C.6" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html#r_dependencies"><i class="fa fa-check"></i><b>C.6</b> Managing Dependencies</a>
+<ul>
+<li class="chapter" data-level="C.6.1" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html#r_checkpoint"><i class="fa fa-check"></i><b>C.6.1</b> Using old versions of packages</a></li>
+</ul></li>
+<li class="chapter" data-level="C.7" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html#r_errorhandling"><i class="fa fa-check"></i><b>C.7</b> Error Handling</a></li>
+<li class="chapter" data-level="C.8" data-path="r_at_dhsc.html"><a href="r_at_dhsc.html#r_tests"><i class="fa fa-check"></i><b>C.8</b> Unit Testing</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="rap.html"><a href="rap.html"><i class="fa fa-check"></i><b>D</b> Reproducible Analytical Pipelines</a>
+<ul>
+<li class="chapter" data-level="D.1" data-path="rap.html"><a href="rap.html#automating-pipelines"><i class="fa fa-check"></i><b>D.1</b> Automating Pipelines</a></li>
+<li class="chapter" data-level="D.2" data-path="rap.html"><a href="rap.html#code-version-linked-to-outputs"><i class="fa fa-check"></i><b>D.2</b> Code Version Linked to Outputs</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/DataS-DHSC/coding_principles_book" target="blank">Coding Principles Book on GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DHSC Coding Principles</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r_at_dhsc" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">C</span> R at DHSC<a href="r_at_dhsc.html#r_at_dhsc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The following are the DHSC <a href="sensible_defaults.html#sensible_defaults">sensible defaults</a> for R:</p>
+<div id="r-version-ide" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">C.1</span> R Version &amp; IDE<a href="r_at_dhsc.html#r-version-ide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The dominant IDE for R is Rstudio, which comes packaged with R.
+For a new project you should use the latest version of Rstudio available from the software portal.</p>
+</div>
+<div id="general-2" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">C.2</span> General<a href="r_at_dhsc.html#general-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Default to packages from the <a href="http://tidyverse.org/">Tidyverse</a>.These have been carefully designed to work together effectively as part of a modern data analysis workflow. More info can be found here: <a href="http://r4ds.had.co.nz">R for Data Science by Hadley Wickham</a>.</p>
+<p>For example:</p>
+<ul>
+<li>Prefer tibbles to data.frames</li>
+<li>Use ggplot2 rather than base graphics</li>
+<li>Use the pipe <code>%&gt;%</code> rather than nesting function calls. (…but not always e.g. see <a href="https://twitter.com/hadleywickham/status/603883121197514752">here</a>).</li>
+<li>Prefer <code>purrr</code> to the <code>apply</code> family of functions. See <a href="http://r4ds.had.co.nz/iteration.html#the-map-functions">here</a></li>
+</ul>
+</div>
+<div id="r_default_packages" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">C.3</span> Packages<a href="r_at_dhsc.html#r_default_packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recommended Packages:</p>
+<ul>
+<li>Data Manupulation and Tidying
+<ul>
+<li><a href="https://dplyr.tidyverse.org/">dplyr</a></li>
+<li><a href="https://tidyr.tidyverse.org/">tidyr</a></li>
+</ul></li>
+<li>Working with messy spreadsheets
+<ul>
+<li><a href="https://nacnudus.github.io/tidyxl/">tidyxl</a></li>
+<li><a href="https://github.com/nacnudus/unpivotr">unpivotr</a></li>
+</ul></li>
+<li>Working with large datasets:
+<ul>
+<li><a href="https://rdatatable.gitlab.io/data.table/">data.table</a></li>
+<li><a href="https://dtplyr.tidyverse.org/">dtplyr</a></li>
+</ul></li>
+<li>Database Interface
+<ul>
+<li><a href="https://dbplyr.tidyverse.org/">dbplyr</a></li>
+</ul></li>
+<li>Plotting
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/">ggplot2</a></li>
+<li><a href="https://plot.ly/r/">plotly</a></li>
+</ul></li>
+<li>Mapping
+<ul>
+<li><a href="https://github.com/r-spatial/sf/">sf</a></li>
+<li><a href="http://rstudio.github.io/leaflet/">leaflet</a></li>
+</ul></li>
+<li>Reproducibility
+<ul>
+<li><a href="https://rstudio.github.io/renv/">renv</a></li>
+</ul></li>
+<li>Producing gov.uk style output
+<ul>
+<li><a href="http://ukgovdatascience.github.io/govstyle/index.html">govstyle</a> (Government Theme for ggplot2)</li>
+<li><a href="https://ukgovdatascience.github.io/govdown/">govdown</a></li>
+</ul></li>
+<li>Machine Learning
+<ul>
+<li><a href="https://tensorflow.rstudio.com/">tensorflow</a></li>
+<li><a href="https://github.com/h2oai/h2o-3">h2o</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="r_projects" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">C.4</span> Project Workflow<a href="r_at_dhsc.html#r_projects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Always work in a project. See the guide to <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">Using Projects</a>.</p>
+<p>Projects functionality is broken in DHSC’s packaged version of Rstudio - see the fix <a href="R/fix_projects.R">here</a></p>
+</div>
+<div id="r_package" class="section level2 hasAnchor" number="13.5">
+<h2><span class="header-section-number">C.5</span> Packaging Your Code<a href="r_at_dhsc.html#r_package" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Packages are the fundamental unit of reproducible R code.
+Therefore, if possible, build an R Package to share and document your code.</p>
+<p>Hadley’s book on <a href="http://r-pkgs.had.co.nz/">R Packages</a> is an effective guide on how to produce a package.</p>
+<p>The <a href="https://usethis.r-lib.org/">usethis</a> package has lots of useful shortcuts for package builders.</p>
+</div>
+<div id="r_dependencies" class="section level2 hasAnchor" number="13.6">
+<h2><span class="header-section-number">C.6</span> Managing Dependencies<a href="r_at_dhsc.html#r_dependencies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are two key competing ways of managing dependencies for an R Project:</p>
+<ul>
+<li><a href="https://rstudio.github.io/packrat/"><code>packrat</code></a> - current established way to manage R dependencies</li>
+<li><a href="https://rstudio.github.io/renv/"><code>renv</code></a> - rapidly maturing, successor to packrat.</li>
+</ul>
+<p>See also:</p>
+<ul>
+<li>Rstudio page on <a href="https://environments.rstudio.com/">managing environments in R</a></li>
+<li>Rbloggers <a href="https://www.r-bloggers.com/reproducible-environments/">post on renv</a></li>
+<li>Rstudio page on combining <a href="https://rstudio.github.io/renv/articles/docker.html">renv and docker</a></li>
+</ul>
+<div id="r_checkpoint" class="section level3 hasAnchor" number="13.6.1">
+<h3><span class="header-section-number">C.6.1</span> Using old versions of packages<a href="r_at_dhsc.html#r_checkpoint" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You may come across code which doesn’t work because it depends on a different version of a package to the one you have.</p>
+<p>Fortunately, Microsoft keep daily snapshots of CRAN and store them on the <a href="https://mran.microsoft.com/timemachine">Microsoft R Application Network</a>.</p>
+<p>The <code>checkpoint</code> package from Microsoft lets you use these snapshots to install packages as if it were any day since 2017-07-01.</p>
+<p>Simply start your script with:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="r_at_dhsc.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(checkpoint)</span>
+<span id="cb7-2"><a href="r_at_dhsc.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="r_at_dhsc.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">checkpoint</span>(<span class="at">snapshotDate =</span> <span class="st">&quot;2015-01-15&quot;</span>,</span>
+<span id="cb7-4"><a href="r_at_dhsc.html#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">checkpointLocation =</span> <span class="fu">getwd</span>()) </span></code></pre></div>
+<p>This will download and fetch all the packages as they existed on the given date and install them to a library on your home drive.</p>
+<p>Notes:</p>
+<ul>
+<li>If the code depends on <code>BH</code> (a lot of tidyverse code will) then this will take some time!</li>
+<li>By default checkpoint puts packages on your P drive - this will be slow.
+<ul>
+<li>You can use the <code>checkpointLocation</code> argument to tell checkpoint to use the C drive.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="r_errorhandling" class="section level2 hasAnchor" number="13.7">
+<h2><span class="header-section-number">C.7</span> Error Handling<a href="r_at_dhsc.html#r_errorhandling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Base R includes the <code>try()</code> and <code>tryCatch()</code> functions for handling errors. You can find an example of basic use of these on <a href="https://www.r-bloggers.com/error-handling-in-r/">r-bloggers</a>.</p>
+<p>Effective error handling in R requires understanding the <em>conditions</em> system. There is a good chapter on this in Hadley’s <a href="https://adv-r.hadley.nz/conditions.html">Advanced R book</a></p>
+<p>If you are iterating over many inputs, it is recommended that you use the <code>safely()</code> family of functions from <code>purrr</code> to create versions which return errors within a list for handling at a later stage.</p>
+</div>
+<div id="r_tests" class="section level2 hasAnchor" number="13.8">
+<h2><span class="header-section-number">C.8</span> Unit Testing<a href="r_at_dhsc.html#r_tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use the <code>testthat</code> package for performing unit tests.
+For details see the <a href="https://r-pkgs.org/tests.html">‘tests’ chapter of R Packages</a>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="py_at_dhsc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"mathjax": "default"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

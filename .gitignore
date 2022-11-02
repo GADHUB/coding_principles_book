@@ -28,6 +28,6 @@ rsconnect/
 # tex files
 *.tex
 #rendered pages in docs
-docs/*.html
+# docs/*.html
 #readme rendered
 *README.html
