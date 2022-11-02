@@ -1,6 +1,6 @@
 ---
 title: "GAD Coding Principles"
-author: "GAD Office of the Chief Analyst"
+author: "AST Development Team"
 site: bookdown::bookdown_site
 documentclass: book
 output:
@@ -49,9 +49,9 @@ The principles are designed to be achievable by all GAD analysts producing code.
 
 (ref:versioncontrol-must) Use [version control](#what_is_vc) and follow guidance on coding in the open.
 
-(ref:versioncontrol-should) Use standard tools ([Git](#git) & [GitHub](#github)) to help you version control code.
+(ref:versioncontrol-should) Use standard tools ([Git, Github Desktop](#git) & [GitHub](#github)) to help you version control code.
 
-(ref:versioncontrol-could) With your team, agree and design a version control [workflow](#workflow_vc). Use ([Git](#git) & [GitHub](#github)) collaboratively and [effectively](#effective_vc). 
+(ref:versioncontrol-could) With your team, agree and design a version control [workflow](#workflow_vc). Use ([Git, Github desktop](#git) & [GitHub](#github)) collaboratively and [effectively](#effective_vc). 
 
 <!-- Print -->
 

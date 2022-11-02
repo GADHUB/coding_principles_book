@@ -5,8 +5,9 @@ github
 effective_vc
 workflow_vc
 code-in-the-open
+gadhub
 manual-version-control
-git-github-at-gad
+github-desktop-github-at-gad
 easy_to_read
 style_guides
 linters

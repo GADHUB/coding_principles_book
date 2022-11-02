@@ -18,8 +18,10 @@ This typically includes a system for identifying versions (i.e. a version number
 and some sort of log of what the changes are, who made them and when they were made.
 Version control systems are usually associated with tools for comparing, restoring and merging versions.
 
-## Git - (program for version control) {#git}
+## Git and Github Desktop - (program for version control) {#git}
 [Git](https://en.wikipedia.org/wiki/Git) is the most popular way to version control code. You can tell Git to keep track of a folder full of code (a repository or 'repo'). As you make changes, Git identifies them and asks which should be kept (or 'committed'), and for a comment identifying why. It uses this to maintain a log of all the changes. This log can be used to restore old versions.
+
+[Github Desktop](https://desktop.github.com/) is an app that simplifies using Git. The app allows you to interact with github via a graphical interface which allows you to perform common git commands without the hassle of using the command line.
 
 ## GitHub - (service for storing code version controlled using git) {#github}
 [GitHub](https://github.com/) is the most popular place to store git repositories. Storing your repository on GitHub has some key benefits:
@@ -29,8 +31,8 @@ Version control systems are usually associated with tools for comparing, restori
 
 As such, using a service like GitHub is a good way to ensure that your code is available to your team, and that knowledge is transferred.
 
-## Using Git & GitHub Effectively {#effective_vc}
-To make effective use of Git and GitHub:
+## Using Git, Github Desktop & GitHub Effectively {#effective_vc}
+To make effective use of Git, Github Desktop and GitHub:
 
 * Familiarise yourself with git! The ['happy git with r'](https://happygitwithr.com/) book has lots of good material, helpful for users of all languages: 
 
@@ -39,6 +41,7 @@ To make effective use of Git and GitHub:
     
 * You could check out [A Quick Guide to Git & GitHub](https://nhs-nss-transforming-publications.github.io/git-guide/), published by the  Information Services Division at National Services Scotland.
   
+* You could check out [Getting started with Github desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop), for an overview of how to set up and use.
 
 * Follow the [GDS Git Style Guide](https://gds-way.cloudapps.digital/standards/git.html)
 
@@ -49,7 +52,6 @@ To make effective use of Git and GitHub:
 ## Version Control Workflow {#workflow_vc}
 Define a version control workflow which explains how you use git as a team. This could include how you use [branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell), how you merge changes and how to handle [pull requests](https://help.github.com/en/articles/about-pull-requests).
 
-
 ## Code in the Open
 GitHub repositories can be *open* (shared with anyone) or *private* (shared only with selected collaborators).
 
@@ -57,10 +59,17 @@ The [Technology Code of Practice](https://www.gov.uk/government/publications/tec
 
 Good reasons for code to be private might be that it includes classified material, or information on an unreleased policy. GDS have published guidance on this for both [external](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed), and [internal](https://gds-way.cloudapps.digital/standards/publish-opensource-code.html) use.
 
+## GADHUB
+[GADHUB](https://github.com/GADHUB) is GAD's github organisation and the place where we store our code repositories. You will need a [GitHub](https://github.com/) account before you can join and get access to GADHUB. Once you have created you account (please use a gad email address and using a handle that includes you name) let the Development team know and they can sent you an invite to join.
+
+For the time being repos on GADHUB are, for the most part, private. This is so we can better manage access to the repos.
+
 ## Manual Version Control
 It is *possible* to manually keep track of your code by systematically keeping copies of your code as you modify it and maintaining a corresponding log of all changes to the code. The log should include: What has changed, why, and a link to the relevant copy of the files. It is recommended to use version control tools (git) instead of this manual process.
 
-## Git & GitHub at GAD
-At present, GAD base machines do not have git. 
-If you have access to a developer account you can install git for windows from: [git-scm.com](https://git-scm.com/download/win)
-It is anticipated that in the near future TAP (The Analytical Platform) will provide git functionality for all analysts within the department.
+## Github Desktop & GitHub at GAD
+At present, GAD base machines do not have git or github desktop by default.
+
+You may be able to install on the modelling servers - look in C:\temp - for installers. If in doubt please contact the development team and/or IT.
+
+
