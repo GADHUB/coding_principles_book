@@ -70,6 +70,6 @@ It is *possible* to manually keep track of your code by systematically keeping c
 ## Github Desktop & GitHub at GAD
 At present, GAD base machines do not have git or github desktop by default.
 
-You may be able to install on the modelling servers - look in C:\temp - for installers. If in doubt please contact the development team and/or IT.
+You may be able to install on the modelling servers - look in C:\\temp - for installers. If in doubt please contact the development team and/or IT.
 
 
