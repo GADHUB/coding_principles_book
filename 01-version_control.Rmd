@@ -52,6 +52,8 @@ To make effective use of Git, Github Desktop and GitHub:
 ## Version Control Workflow {#workflow_vc}
 Define a version control workflow which explains how you use git as a team. This could include how you use [branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell), how you merge changes and how to handle [pull requests](https://help.github.com/en/articles/about-pull-requests).
 
+See the [appendix](#workflow) for a general approach to version control at GAD.
+
 ## Code in the Open
 GitHub repositories can be *open* (shared with anyone) or *private* (shared only with selected collaborators).
 

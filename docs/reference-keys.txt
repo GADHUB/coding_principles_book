@@ -104,3 +104,8 @@ r_reading_in_data_from_csv_files
 rap
 automating-pipelines
 code-version-linked-to-outputs
+workflow
+general-workflow
+notes
+commits
+setting_up

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Principle 10 Use Appropriate and Tidy Data | GAD Coding Principles</title>
-  <meta name="description" content="Principle 10 Use Appropriate and Tidy Data | GAD Coding Principles" />
+  <title>E Version control workflow | GAD Coding Principles</title>
+  <meta name="description" content="E Version control workflow | GAD Coding Principles" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Principle 10 Use Appropriate and Tidy Data | GAD Coding Principles" />
+  <meta property="og:title" content="E Version control workflow | GAD Coding Principles" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Principle 10 Use Appropriate and Tidy Data | GAD Coding Principles" />
+  <meta name="twitter:title" content="E Version control workflow | GAD Coding Principles" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="reproducible.html"/>
-<link rel="next" href="coding-resources.html"/>
+<link rel="prev" href="rap.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -316,76 +316,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data_structure" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">Principle 10</span> Use Appropriate and Tidy Data<a href="data_structure.html#data_structure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Use the right data structures for the job. Programming languages offer many different ways to work with the same data. Using the right one will make a task easier, and decrease your chance of getting it wrong.</p>
-<p><strong>You Must</strong> - Know what <a href="data_structure.html#tidy_data">‘Tidy Data’</a> is, and understand why it is valuable.</p>
-<p><strong>You Should</strong> - Be familiar with the <a href="data_structure.html#data_types">data types</a> and structures available to you and ensure that you use the right ones.</p>
-<p><strong>You Could</strong> - Think about relationships between datasets, design <a href="data_structure.html#schema">schemas</a> and store data in an efficient way.</p>
-<table>
-<colgroup>
-<col width="20%" />
-<col width="80%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Related Areas:</th>
-<th><a href="sensible_defaults.html#sensible_defaults">Sensible Defaults</a></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<div id="tidy_data" class="section level2 hasAnchor" number="10.1">
-<h2><span class="header-section-number">10.1</span> Tidy Data?<a href="data_structure.html#tidy_data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A dataset is a collection of values, usually either numbers (if quantitative) or strings (if qualitative). Values are organised in two ways; every value belongs to a <em>variable</em> and an <em>observation</em>:</p>
+<div id="workflow" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">E</span> Version control workflow<a href="workflow.html#workflow" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="general-workflow" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">E.1</span> General workflow<a href="workflow.html#general-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>A variable contains all values that measure the same underlying attribute (like height, temperature, duration) across units.</li>
-<li>An observation contains all values measured on the same <em>unit</em> (like a person, or a day, or a race) across attributes.</li>
-</ul>
-<p>The majority of data we work with comes in rectangles. For this data to be tidy, ensure that:
-1. Each variable forms a column.
-2. Each observation forms a row.
-3. Each type of observational unit forms a table.</p>
-<p>For more see the section on <em>Tidy Data</em> in <a href="https://r4ds.had.co.nz/tidy-data.html">R for Data Science</a> or the <a href="http://vita.had.co.nz/papers/tidy-data.pdf">original paper</a>.</p>
-<p>Use tidy data structures as part of your work. You should attempt to convert incoming data into tidy format as quickly as possible.
-Any data that is output that may be used in other projects should be in tidy format as well as any other required formats.</p>
-</div>
-<div id="data_types" class="section level2 hasAnchor" number="10.2">
-<h2><span class="header-section-number">10.2</span> Data Types and Structures<a href="data_structure.html#data_types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Data <em>types</em> are the basic units which your language uses to store data, things like integers, doubles, strings and logical data. Typically you are working with data frames, arrays, matricies or lists. These hold multiple items of data in a data <em>structure</em>.</p>
-<p>Different types and structures are used for different things, and have different capabilities. To be effective, know about the data types and structures available to you and use the right ones for the job!</p>
-<div id="r" class="section level3 hasAnchor" number="10.2.1">
-<h3><span class="header-section-number">10.2.1</span> R<a href="data_structure.html#r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The R Programming for Data Science book has a good section on the <a href="https://bookdown.org/rdpeng/rprogdatascience/r-nuts-and-bolts.html#r-objects">‘Nuts and Bolts’</a> of R which covers types and structures.
-For more about the different data structures a good resource is the <a href="http://adv-r.had.co.nz/Data-structures.html">Advanced R</a> book.</p>
-</div>
-<div id="python" class="section level3 hasAnchor" number="10.2.2">
-<h3><span class="header-section-number">10.2.2</span> Python<a href="data_structure.html#python" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>For a list of python datatypes see the:</p>
-<ul>
-<li><a href="https://docs.python.org/3/library/datatypes.html">Python Documentation</a></li>
-<li><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html">Pandas Documentation</a></li>
+<li>Set up a “work-space” folder in your project folder.</li>
+<li>Each developer sets up a sub folder in the “work-space” folder - this should be named to identify the user eg their initials.</li>
+<li>Each developer will need to clone the project’s github repository into their work-space (if the project has not been set up on github yet then it will need to be <a href="workflow.html#setting_up">created</a>).</li>
+<li>Developers should work in their own work-space.</li>
+<li>Developers should switch to the agreed development branch (this may need to be set up).</li>
+<li>Developers should fetch/pull any changes from the repo.</li>
+<li>Developers should make edits and <a href="workflow.html#commits">commit</a> and push then to the development branch.</li>
+<li>Issues should be added to the Issues section on the github repo and assigned to others as needed.</li>
 </ul>
 </div>
+<div id="notes" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">E.2</span> Notes<a href="workflow.html#notes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>We are mainly using the github desktop app as our main way of pull/push/committing rather than git – it has a nice front end and it’s probably easier and more intuitive to use than cli git. However git or VS code are alternatives.</li>
+<li>We are using the github issue section on github to record issues, assign issues to people and track progress (when making a commit you can include a tag to the issue so the commits are shown in the issue – this allows others (eg a reviewer) to get the code that’s changed quickly)</li>
+<li>We have found a single development branch as the most easy to use approach when working collaboratively – we should merge this development branch into the main branch at key stages.</li>
+<li>We have found that if possible developers should avoid working on the same file at the same time - otherwise merge conflicts can occur - it is possible to resolve these but this can be confusing!</li>
+</ul>
 </div>
-<div id="schema" class="section level2 hasAnchor" number="10.3">
-<h2><span class="header-section-number">10.3</span> Schema<a href="data_structure.html#schema" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The R for data science book has a nice section on <a href="https://r4ds.had.co.nz/relational-data.html">relational data</a>.</p>
+<div id="commits" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">E.3</span> Commits<a href="workflow.html#commits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Commits should ideally relate to a single issue or piece of functionality (this makes it easier to revert if the change causes problems).</li>
+<li>Commits should be well labeled (makes it easier to find a change later).</li>
+<li>Add more detailed information in the commits desciptions (further comments or technical detail).</li>
+</ul>
+</div>
+<div id="setting_up" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">E.4</span> Setting up the project repo for first time<a href="workflow.html#setting_up" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>As above the initial workspace should be set up and subarea for the coder setting up the repo.</li>
+<li>It is important to set up a <a href="https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files">.gitignore</a> file at the start of the project so we do not include any data or build tools (like node_modules folder that Sam mentions) – this will be project dependant but somewhere like <a href="https://github.com/github/gitignore">(https://github.com/github/gitignore</a> can be a good starting point – depending on the language(s) you are using. Gitignore allows us to control which files/folders are to be excluded from the github index (which tracks files) but its important to do this early (ideally with the first commit) as it can be difficult to then remove these files/folders from the index.</li>
+<li>It is useful to allow add a <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github">README.md file</a> to set out what the project is about and any useful information.</li>
+<li>Github desktop or git can be used to set up a <a href="https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/adding-a-repository-from-your-local-computer-to-github-desktop">new repository in the folder</a>.</li>
+<li>The repo should be added to the GADHUB organisation.</li>
+<li>Development <a href="https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/managing-branches">branch(es)</a> should be added to your repo .</li>
+<li>Developers can be given access to the repo via the repos Settings &gt; Collaborators and Teams menu.</li>
+</ul>
 
 </div>
-</div>
-
-
-
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="reproducible.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="coding-resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rap.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
